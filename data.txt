@@ -1,0 +1,433 @@
+I write backwards. I think of the final game for the campaign and the logical steps it will take to that point. From there, break the overall story into segments that will fill roughly one or two sessions. At this point, map, flesh out NPCs, encounters, and any loot that may be needed.
+If there is a gap, I may look to a classic module for inspiration. The most important thing if I need to include/adapt a classic module is "does it fit". If it will not mesh with the overall story, skip it
+
+Q: And to determine a module's "fit", do you have to read through it and already be familiar with it? What happens if nothing you have would be suitable?
+
+To see if it is fit, I read through it (unless I am already familiar with it). If there is nothing suitable, I make my own or heavily edit an existing module (use only maps and throw in my own encounters, etc). Usually modules are a secondary solution anyway. I try to create my own as much as I can.
+
+========
+
+Where do you look for adventures or encounters to include?
+The best place[: my brain]
+What are the most important things you want to know about a new adventure to determine if it'll be appropriate?
+"Will my players have agency? Will it be enjoyable? Is it suitably epic and engaging? What will I do if they don't take the most obvious way out?"
+How do you get this information about a new adventure now?
+Thinking..?
+
+To see if it is fit, I read through it (unless I am already familiar with it). If there is nothing suitable, I make my own or heavily edit an existing module (use only maps and throw in my own encounters, etc). Usually modules are a secondary solution anyway. I try to create my own as much as I can.
+
+Q: That's really cool :) So you invent/homebrew all encounters? Do you use premade adventures for anything? As inspiration, to shortcut on prep time, etc?
+
+Yep, I homebrew every single encounter, quest and campaign. It's the main attraction of D&D for me. Its best, strongest advantage. Plus, I honestly haven't encountered many creative adventures that aren't something I've seen before at least several times. The best adventure I've seen is probably 1997's March of the Modron for 2nd edition, but it also had a few very generic plot points.
+
+The only time I've DMed a premade adventure (namely March of the Modrons, since it's the only one that really charmed me, as the world of Planescape is just so juicy) was when some of my players couldn't gather together, but others still wanted to play.
+
+Inspiration - never. Because they are usually just so... uninspired. I usually draw inspiration from books that I've read (like Wheel of Time etc.), games I've played (Planescape: Torment, Torment: Tides of Numenera, Dragon Age: Origins, Dragon's Dogma, Dark Souls etc.) and the like, that really try to do something new, and fresh.
+
+=========
+
+I honestly use APs almost exclusively. I'm happy to change things in there to fit my group, but I simply don't have time to do everything from scratch.
+
+--- This. APs are absolutely invaluable, even if you just use them as a loose framework for your campaign. If you pair them with the campaign setting book for the area you're in, they're even better. Now if (when) your players go off the rails, you'll be able to know what they're getting themselves into.
+
+=========
+
+Okay, let's talk about the process -
+"My players stepped off the map at the end of my last session"
+That determines the starting location for my next session. Where did they land?
+I determine the environment/locale
+After that, I start googling for reviews of modules that take place in a similar setting.
+I check to see what the suggested levels are...
+... I check existing adventures I have to see if their influences include an older module...
+I then figure out the three or so likely locations the next session will end
+I then start researching the aspects of this location; I might need to lookup stories/adventures/campaigns that involve a certain pantheon, or a certain monster, so on and so forth.
+The Most Important Thing I Want to Know About It Is Who Wrote It, When They Wrote It, For What Edition, And What Are the Opinions About It
+The opinions don't have to be "it was great" I just want to know what people thought.
+Sometimes, its just about rolling on random tables and finding out how the encounters stitch together.
+
+====
+
+I go to a countries lore on the pathfinder wiki and try to tie different things together from that, occasionally changing a few tiny things to make it fit my setting.
+
+====
+
+I've looked on the DM's Guild, and on a few different Reddit communities.
+Things I look for:
+If it's compatible with 5e or easily convertible
+Free or very low cost, especially if I'm not certain it will be a good fit
+If it's easily placeable within my world (I'm using Collabris), and within the part that the PCs are close to, i.e. isn't on its own tiny island or in the Underdark or whatever
+Length - I'm looking for shorter modules right now, as I'm still a new DM, but might go for longer ones in the future
+How I get it right now is honestly by reading the adventure, or reading summaries on the DM's Guild.
+
+Q: Now, if you had an adventure summary page made for DMs like you (a la AdventureLookup) that tried to save you from reading the adventure, what would you expect to be on it?
+
+I would want to see some of these:
+- Edition it was published for
+- Ease to convert to 5E (or if a conversion guide has been published, either by the original publisher or by a third party)
+- Recommended level for starting
+- Expected level at completion
+- What other sources are required (for magic items or monster stats, especially): Basic Rules, MM, Volo's, etc
+- Any restrictions on location (Does it start in a city? A town? A road in the country? A prison in the Underdark? Does it need to be set near a coast, a volcano, etc?)
+- Any planar travel or interaction
+- Common types of monsters
+- Main villain(s)
+- Number and size of dungeons included
+Edit: Oh, also cost, and where to get it in PDF and/or hard copy
+
+====
+
+Where do you look for adventures or encounters to include?
+I make them myself. Generally speaking, if I do include something someone else made, it's because I stumbled upon it earlier and thought it was cool, not because I actively went looking for something to include in my game.
+What are the most important things you want to know about a new adventure to determine if it'll be appropriate?
+Theoretically, the edition, intended PC level, and possibly the campaign setting would all be useful. In addition, tags for things like geography, monsters, and villains-types might be useful.
+How do you get this information about a new adventure now?
+I don't, I guess?
+Side note: if you're looking into creating a searchable, crowd-sourced database of DnD adventures, I know there was a small group that was working on that project a few months ago. I'm pretty sure the project fell through pretty quickly, but you might glean some useful info from Adventure Lookup's GitHub or design document.
+
+====
+
+I periodically scour DMsguild, download everything that's free, and dump it into a big folder. Whenever I'm exceptionally bored, I'll skim through a few of the dozens of modules I have accumulated this way, discarding those I don't like. I'm also working my way through old copies of Dungeon Magazine, and I always check out the One Page Dungeon contest, too.
+Those I do like (i.e. ones that look like they would be fun to run at some point in the future, or that look like they might fill an upcoming gap) I give a cursory read-through, then make a note of the general goings-on in the module, the level range, or sometimes just a useful bit to snip out for later.
+For your scenario, I would look into my files, read the one-sentence summaries I left myself months ago, and cannibalise something if possible.
+The most important things I want to know about an adventure is what exactly happens in it, which is where most modules let me down. Even if they offer some sort of summary or synopsis, those are usually incomplete, as though they were wary of giving away the ending. As the DM, I obviously want to know the ending, though. As is, I effectively have to read the entire thing to know if I can use it, which is far from optimal.
+
+Q: Thanks, that's great insight! Dungeon Magazine has so much stuff, and I wish I had a better way to keep good notes on what I liked about each adventure.
+As a follow-up, would an adventure breakdown by part or chapter with a full synopsis (including twists and endings) be useful to you?
+It sounds like you like keeping your own stash of adventures handy. In an ideal world, how would you like those to be stored and organized? What would a OneNote for the adventures that you've read and liked look like for you?
+Do you have a recent adventure that you've done a bit of that work on and would you mind sharing a screenshot of your notes with me?
+
+An adventure breakdown would be useful, as long as it's specific (in terms of how the the various parts interconnect, rather than just naming the high points).
+I mostly just keep the PDFs I've deemed worthy of using in a folder, and when the time comes I move a module I'm prepping into it's own sub-folder with any notes and resources. The ones I haven't even looked at are just in a mess of folders with varying layers of "New Folder" strewn in for every new batch... I don't even try to keep those organised.
+Most of the notes I make on the modules are pretty vague (or reference in-campaign stuff), but here's an example of what I wrote for one of the Dungeon Mag adventures:
+issue 122, p. 10, lvl 3: diviner niece wants uncle's remains retrieved from the Underdark; entrance is in forest a few days from town; corpse is revered as hero by troglodytes
+In contrast, the actual adventure has almost a page of "Background", "Synopsis", and "Adventure Hooks", all of which you have to read to get the gist of what's going on. That's fully 1/8 of the total page count. A lot of that is dedicated to details (the troglodytes are the remnants of illithid experiments, the corpse will be burnt in a ritual pyre) which aren't really necessary in order to know what the adventure is about. The central tension is implicit.
+
+--- I'm not OP, but I think it would be great if adventures would give a synopsis or summary of the Adventure at the beginning, so I don't have to immediately read everything in the available module before I decide whether or not I want to run it.
+I'm assuming you're thinking about doing something like that for AdventureLookup, which I definitely think would be handy! Also, thanks for putting the time in to make something that will be super useful for everyone!
+
+====
+
+Gotta go with the boring answer here and say
+"adventure path" or other pre-generated stories .
+
+Q: And how do you know any given adventure path will be fun for you and your players before you run it? What's your prep like?
+
+Um. Basically just by reading the short description. :)
+We just roll with it. ;)
+
+--- Not the original guy who made this comment, but a couple answers.
+First, we look at the general idea of it and the DM takes a peek at the first adventure, to get a good idea of it. Also check a couple reviews. There's a guy on here, I can't provide the link right now, who has reviewed all of the APs and has a pretty good analysis.
+Second, we aren't locked in to an AP. It's not like we start playing module 1 and now we have to play all the way through. We can take a break or stop after the first module. Hell, if nobody's having fun with it, we will stop right away, cause why keep playing something nobody is interested in? Right now my group and I are working our way through two different APs. We just finished Hells Rebels 1 which I was DMing, and for a break (both for me DMing, and for the group a break from heavy RP and dark themes) we are going to jump over to Iron Gods 1. Then when we finish that we will probably jump back.
+Regarding prep... it's honestly not much. I've read through my module a number of times, gotten a pretty good idea about how I want to do things. I make some changes where I want to, make sure I understand the maps (cause, God, sometimes they can be confusing if not flat out wrong), and I'm pretty much good to go. Each week I review the stuff that's likely to come up during that session. Probably less than an hour of prep, after initial research.
+
+--- I asked myself this question before I started my own homebrew. I read the module crown of the kobold king and saw the ending was not something i would be pleased with, so I studied both Andoran, and falcon's hollow areas extensively. From there I read about the neighboring lands and their high points and worked a story out of it.
+
+--- An AP is a long term proposition, so I tell my players a little bit about it to see if they like the concept. It is quite possible to talk about the AP in general terms without spoiling it.
+
+====
+
+for maps "https://rpgcharacters.wordpress.com/" is an invaluable resource.
+
+Q: Do you usually look for a map to fit an idea/encounter you already have, or do you browse for cool maps and save them for eventual use later?
+
+Generally I will pick them ahead of time as most of them are dungeons rather then "single site" encounter maps. Though if I'm world building I usually save a few I like then drop them in as I see fit across the map.
+
+--- I have found quite a few maps that were made specifically for certain modules and APs on google by typing it up. Other than that, I just type in certain terrain features I am looking for into google and click on the images button.
+
+====
+
+Ripoff stories, look for cool things on google, have a large library of adventures I'll never get to use in full. Sometimes you can rip something out of there and make a short adventure.
+
+Q: What does this library of adventures look like? Do you have any organization or notes on these, or are they just pdfs in a folder that you may read later?
+I ask because I have an enormous amount of trouble finding the cool adventures I read three months ago and using them tonight.
+
+Pdfs in a large folder, sometimes with note files next to the pdfs where I put ideas for things that can be lifted and how to hook a lifted part.
+
+====
+
+Where do you look for adventures or encounters to include?
+Besides running premade adventures from WotC themselves, i usually just homebrew. Whenever i do not have the time to homebrew, i search dmsguild for some homebrew adventure goodness!
+What are the most important things you want to know about a new adventure to determine if it'll be appropriate?
+I always check the setting with my players during session-zero. I talk through some of the lore and see if they dig the setting. Once that is all right, i ask them what kind of characters they want to play and what they want to do in the world. On those wishes, i edit what i already prepped so i am able to start the sessions two weeks later.
+How do you get this information about a new adventure now?
+Just make it up! Usually my work is inspired by something, mostly gaming related. But sometimes also movie related. But usually an idea just pops up in my head, i write it down and use it for later.
+
+====
+
+Matt makes reference to a "tower of the oracle" in one of his videos. When I heard that, I was like, yeah! Tower of the Oracle! I need one too! I started looking around for modules with cool wizard towers, and I landed on "When a Star Falls," which is a pretty good dungeon.
+I gutted it and kept only the conceit for the tower, which is that there is an oracle that takes people's money to predict the future, but by the time the PCs arrive, there has been a coup and the lead wizard is trapped at the top of the tower by the baddies who orchestrated the coup. I even jettisoned the map, although I kept its conceit too: the party can't get into the tower to free the good wizard without getting past a fortress of mercenary gnomes who don't realize there has been a coup...
+
+Q: Ha that's cool! But how did you find that particular module? Just googling for "wizard tower dnd"?
+And if you gutted everything but the tower, then took out the map of the tower, don't you only have the idea of a "wizard's tower" left? Was reading "When a Star Falls" just good for getting you unstuck?
+
+So I have had an epiphany with regard to modules, and it is very connected to Matt's love of Orlane.
+The "wizard's tower" part of "When a Star Falls" is the same as "Against the Cult of the Reptile God." That is, both modules have the PCs visit a place where there are already social "scripts" in play that the players can engage in. Take Orlane, for instance: the party arrives and is able to do what anyone normally does when they visit a small town: go to the bar, walk around, buy something from the blacksmith, etc. Except in Orlane, the "script" has been flipped and there is doom lurking beneath it.
+Now take the "Tower of the Oracle." The script is that people come to the oracle, pay a lot of money, and ask a question about the future, which the oracle answers. But like in Orlane, evil powers have taken over and they are bluffing their way through the script. Tension is created when the PCs recognize divergence from the script.
+What is wonderful is that Orlane and the Tower of the Oracle have totally different locations, making them feel like different adventures, even though the rhythm is the same.
+I know Matt has thought about this because I read that his other favorite module is about a town where a deceptive power has taken over and the PCs have to uncover the plot. It's just like Orlane except the lair of the reptile god is literally beneath the town and the module is higher level. Sorry, I can't remember the name of the module. Anyway, he should do a video on this phenomenon.
+To answer the original poster's question in these terms, my new question when looking at a module I might use is, "What's the script the PCs encounter when they arrive?"
+
+====
+
+I keep a running google drive full of random ideas I get at random times... then when I have time, I'll flesh them out a little bit, and as time goes on, I'll eventually work out a campaign that uses one or a few of those ideas.
+I rarely use boxed adventures - not that I have anything against them, I actually love playing AP's and modules - but as a GM, I really enjoy world building more than anything else, so putting the whole thing together myself is half the fun.
+As far as your specific questions...
+I try to use a 3-2-1 methodology with my adventures, 3 parts RP/Exploration, 2 parts Combat, 1 part downtime. This mix has worked really well for me over the years (even when Downtime was just dungeons and shopping only). I try to include episodic things (what's happening tonight) as well as foreshadowing and/or bits of what is going on as a whole (what's happening everywhere). There are always the random encounters as well, but I try to have them make sense whenever possible, and often times they turn into entire side quests. Ex.: Recent campaign, group had a random encounter with some trolls. They won, but then got curious why trolls were in the area, and followed their tracks back to a small village that they had apparently destroyed. From there, they ended up finding some refugees, learning that the trolls came from further up in the hills, and made their way to a troll encampment and committed troll genocide. Hehe.
+Well, since I usually design them, appropriate is kind of a non-factor, but if I was going to use an AP or module, I would likely look at what the overall feel of the adventure is like, and try to match it to the players' interests in the game. Do they love pirates? Skulls and Shackles. Do they want to build a kingdom? Kingmaker. Do they want to end up hunting demons and going through the layers of hell? Well... they can come to Reno. :P
+As above, IF I were going to use an AP or Module, I'd look on this subreddit first for reviews and notes, and then look at reviews and notes elsewhere as well. Plus, honestly, most of the basic descriptions of the AP's and Modules for Paizo are pretty succinct but give a decent idea of what they are about.
+
+====
+
+I run my own, but every now and then when i find a cool looking adventure in my local store, i might grab it for inspiration.
+
+Q: Do cool looking adventures in the store ever turn out to be less cool when you get them home?
+
+Most of the times you get somewhat of a good read from it anyway, pluss loot ideas, encounter ideas, principles of storytelling, character ideas...
+You end up with something, pathfinder is good at atleast having some cool stuff in all their books like archetypes, loot etc...
+
+--- Yup, i go to bookman's typically to try to find this kind of stuff at a really cheap price.
+
+====
+
+Not the original guy who made this comment, but a couple answers.
+First, we look at the general idea of it and the DM takes a peek at the first adventure, to get a good idea of it. Also check a couple reviews. There's a guy on here, I can't provide the link right now, who has reviewed all of the APs and has a pretty good analysis.
+Second, we aren't locked in to an AP. It's not like we start playing module 1 and now we have to play all the way through. We can take a break or stop after the first module. Hell, if nobody's having fun with it, we will stop right away, cause why keep playing something nobody is interested in? Right now my group and I are working our way through two different APs. We just finished Hells Rebels 1 which I was DMing, and for a break (both for me DMing, and for the group a break from heavy RP and dark themes) we are going to jump over to Iron Gods 1. Then when we finish that we will probably jump back.
+Regarding prep... it's honestly not much. I've read through my module a number of times, gotten a pretty good idea about how I want to do things. I make some changes where I want to, make sure I understand the maps (cause, God, sometimes they can be confusing if not flat out wrong), and I'm pretty much good to go. Each week I review the stuff that's likely to come up during that session. Probably less than an hour of prep, after initial research.
+
+====
+
+Where do you look for adventures or encounters to include?
+I usually have a general idea depending on where they are on the map. I have a bunch of adventures I've saved over the years that I've bought or found in Dungeon or Dragon magazine or that I've found online. If I need something new, however, I'm apt to surf the net until I find something I can adapt for my use.
+What are the most important things you want to know about a new adventure to determine if it'll be appropriate?
+I want to know the if the adventure fits my setting (both my world as well as the geography where the PCs are) and the tone of my campaign. The monsters and NPCs I can always adjust to the PCs level as needed.
+How do you get this information about a new adventure now?
+If it's not something I'm already familiar with, it's a pain, to be honest. It would be great if each adventure had a 1-page executive summary up front, but that's usually not the case. So, it's a matter of reading the first page or two of the adventure, skimming through the rest of it and reading the last couple pages to see the pay-off/big boss. It's time-consuming, but not as time-consuming as creating your own.
+
+Q: That's really interesting! Now about this bunch of adventures you have saved, can you tell me how you've organized them and how you'd go about finding one? Do you save any of your own notes / meta information with the adventures?
+
+I wish I were that organized! The ones I've run before, I don't really need notes on. I don't have a master list or anything, unfortunately.
+
+====
+
+I get my ideas from different places. I started playing D&D during 2nd Edition, so I still have adventure modules and Dungeon magazines that span several editions. This can find me filler when I am being lazy. If we're going to talk about inspiration and imagination, however, I get that from phrases, pictures, songs. Examples:
+I started creating (never finished) an adventure based off of Seal's Kiss From A Rose - I was obsessed with a tragic love story featuring a 'greying tower'
+I love hearing about unique environments/terrain - I was reading up on the different planes and ran across a sentence describing the varying gravity of Pandemonium. I created an adventure based on that.
+The background for my laptop is a picture of an adventurer squatting on the edge of a cliff, overlooking a temple in what looks to be a box canyon. The temple looks abandoned, as nature has started overtaking the buildings again. Love that picture. Based an adventure on it.
+In reading the DMG, there is a suggestion about modifying monsters by adding traits from other monsters to one you are looking to adding to your game. I became enamored with the idea of giving Lizardfolk the Spider Climb trait. I have an image of the PCs camping in some ruins near a lake and the Lizardfolk crawling out of the water and onto the walls of the ruins, surprising the PCs (who never look up).
+These ideas will, more than likely, sit in the back of my mind until I come across a place to deploy them, sometimes in a planned session, sometimes as an on-the-fly filler because the PCs ignored completely what I had planned for the evening
+Hope that helps!
+
+====
+
+I steal them from books movies tv shows people. Whatever sounds good and then I tweak them to fit my world or setting. I've been with dms who used modules and such, personally I find that prepping a Module is way more work and allows me far less flexibility as a dm.
+
+====
+
+I only do general prep (re-reading rules, getting excited about NPC ideas, coming up with names, atmosphere, etc.) before I have a sense of what sort of party I'm going to be working with.
+Most recently I had a group send me their character ideas and rec'd NE Ninja, LE Summoner, CN Bard, CN Rogue, CN Alchemist. I spent a few days catching up on crime movies and we're now a couple of months into Breaking Bad, Pathfinder edition.
+
+====
+
+I steal. Steal steal steal all day.
+My favorite campaign is bloodily ripped from the Exile/Avernum series by Spidweb Software. Another is basically typical fantasy tropes in which actually Sheogorath from the Elder Scrolls games dicks with my players. One that most DMs have run is some rendition of the French Revolution (generic people's revolution), WWII (usually with orc nazis), or game of thrones (with either actual walkers or orcs as the mindless murdering race).
+Theft + lack of talent = originality
+
+====
+
+I want to know several things: What party level is it designed for? who are the primary and secondary enemy types (the boss is an ogre, the minions are bugbears). I also want to know the genre of the adventure (murder mystery, political intrigue, search and destroy, tower defense, etc). I want to know the environment (wilderness, dungeon, arctic, aquatic, etc). And finally, something that most adventure databases never consider: I want to know about how many hours an adventure will likely take (obviously an estimate). This is really important. If I just want a side quest, I don't want to pick something that will take 15 hours (several game sessions) to resolve.
+Edit: Actually, I just thought of something else: maps. Does it include a map of the area/region? Map of the town? Map of the dungeon(s)?
+
+Q: That's really interesting. My problem with adventures is that usually they're composed of smaller encounters or chapters, and each one has a different genre, environment, and baddies, and I've never seen that info represented well in a one-page summary.
+
+Exactly. That's why adventure look up would be so great if it had all of these columns by which to sort.
+
+====
+
+I've got my own built world I've been working on and all of my adventures are completely written off the top of my head. It usually takes me a week or two but I can write a good 4 or 5 session adventure in that time. A couple of them continued beyond that and now I'm converting them into books!
+
+====
+
+I've always incorporated my character's backstories into my plot somehow. They've only gone off the rails a couple of times. I'm usually quite prepared for the region but if they ever went out of the main plot is probably take a ten or twenty minute break to look up where they're going and write something interesting. I'm good with going off the path.
+I'm up for anything that makes my players feel that the world is open and their oyster.
+
+====
+
+My first response was to say that I find them adventurous.
+Where do you look for adventures or encounters to include? Google or Reddit What are the most important things you want to know about a new adventure to determine if it'll be appropriate? Setting and Main Adversaries then the level. How do you get this information about a new adventure now? Seems like the same question as number 1.
+
+====
+
+1) I hit up my Raging Swan resources, check my huge list of 3.5 resources from WotC, or my back issues of Dungeon, or check my google keep section for adventure hooks that i've found online. I'm running a module for one group right now but it will go off the rails soon.
+2) Does it feel right? Can I make it feel right? Does it seem interesting?
+3) I don't understand. I guess google if i don't already own it?
+
+====
+
+Pull stuff out of my ass using plot hooks from the story I put in and repurpose maps.
+
+====
+
+It's been a while since he updated, but this is the best list (https://merricb.com/the-great-list-of-dd-5e-adventures/).
+edit: he has a link to the adventures sorted by level on there.
+
+--- Total Party Kill Handbook (http://www.dmsguild.com/product/190859/The-Total-Party-Kill-Handbook?affiliate_id=8220) 
+Hnnnnnnnnng :D
+
+====
+
+But anyway. I have my core group that is running one of the APs. When we get to a point that we do a different one, we go over the general themes and quick summaries of the various APs (also look at this AP survey for what people had to say on most of them because hells yes I use my own tools. Well, partially my tool in this case).
+For other cases, such as introducing a new group of players to Pathfinder, I'll take the shorter modules, put a few together on a list based on what level-ish we plan on playing at, and put together a short list like this. It's normally longer but this was after the list had been narrowed down the last time I did this, and didn't feel like reconstructing the full one. Then the group will vote on which adventure/module/story they want to play (ok this time this is a plug for OpaVote because Ranked-Choice Voting is super awesome).
+
+Q: But where did you find the shorter modules, and what if there were 200 of them? How would you pick between them without having to read them all?
+
+I use this list of modules (http://pathfinderwiki.com/wiki/Pathfinder_Modules) that I've actually double checked and helped curate myself (admittedly this example means jettisoning the Society adventures), and from there it becomes a much more reasonable list once I have the general short range of starting levels my party is aiming for.
+EDIT: Oh, though even better for some people, especially those that want to see the Society options, is the Adventure Finder on the Paizo website, that includes looking up adventures by level.
+
+====
+
+Since I only run APs if I can, I just try to homebrew something to get my players back on track if they stray too far off it.
+
+====
+
+Currently am running the adventure path Rasputin must die, it looked like the most fun adventure path out of reign of winter and my players loved it. So I injected it into our game and at the end they are gonna hand off the plot Maguffin stuff to the real hero's running the reign of winter adventure path (Basically the Pathfinder classic characters or whatever they are called signature characters?) Anyway I thought it looked fun they thought it looked fun it has been fun. All the rest of my campaign was and is written by me so I get ideas from like everything. I've even started writing stuff for when the players eventually go mythic and want to travel outer space via starjammer and all the plot that's already been established in the pathfinder universe for that.
+
+====
+
+Only half of my group is actually invested in the roleplaying part of our sessions, so I like to build random short quests for everyone to enjoy with very light roleplaying.
+I build off of what they know so far and what I know about the land they're in (Varisia) and I make a lore-friendly quest up and make sure to account for all the dumb, meta, and plain hilarious things they'll probably do during the travel or combat.
+I make sure not to use important NPCs in the side quests they do or give them too much experience/gear. (Though I do throw in some extra blades for the group rogue to throw and lose.)
+I'm going to try and get them going on the Runelords AP tonight, so hopefully I'll be able to use APs from now on and sprinkle in side quests instead of the other way around. (That is, sprinkling in lore and story on their side quests.)
+
+====
+
+I always make em up. I look up monsters by terrain first, and pick a few I like and design groups, ambushes, or monster settlements if it applies in the area. Then I set up friendly towns/people to be encountered along the way. I'll usually give the friendlies at least 1 silly side quest, like recapturing a bunch of escaped centipedes for an insect collector, or finding a family heirloom. I use those to guide players to more interesting finds/quests.
+I don't like premade adventures, and rather have all my players submit a backstory. Then I can work in their pasts into a story finding common enemies and drives.
+
+====
+
+Time. I have them in different folders according to the general level the adventure is aimed at, but ideally, I'd have a summary for each one describing the highlights, the type of dungeon, boss, traps, puzzles, etc.
+
+====
+
+I bold-faced STEAL shit from cool games i've played in the past.
+My world map is pretty much a boot-leg Lordran with some things swapped around.
+More than once i've stolen a map layout straight from a video game. Most fights are really easy, since I follow the Fire Emblem style of enemy encounter design. Thieves, mages, warriors, and priests all get plenty of spotlight, I just swap up their abilities as suits the enemy organizations. For special encounters or monsters, I just do what either seems cool from a CR-appropriate list or make something cool up myself
+
+====
+
+I make my own adventures and encounters and run more homebrew styled games, i might draw inspiration from a module sporadically(Storm kings thunder from 5e is one of the few modules that was open ended enough i could tweak it just a little and run with it while still having the homebrew feel) but its very infrequent as most adventures in modules lack explanations on why this plot is relevant and can't be circumvented with a high enough level spell which is typically why they won't work with my playergroups. (Why didn't they speak with dead on the dead guy to figure out who killed him or if he wouldn't have been able to see his assailant there's always the nifty spell of the red hand of the killer. Why don't they ressurect him? etc are the typical answers that modules fail to have answers for because their plotlines typically would break with those kind of spells)
+Investment into the world is important(are its npcs fun and amusing? Are cities worth exploring? Do the maps seem engaging? Is there the opportunity for roleplay or is it just a dungeoncrawl?), encounterdesign is important; and most modules are really easy for people who have build any form of competent character and if there isn't a challenge then the story better be incredible and open enough for my players to feel like they are impacting the world (seeing it evolve in front of them due to their actions!) which typically is a huge issue in modules all together.
+The little information i do find about modules is through gaming groups, subreddits or forums. I prefer word of mouth personally as most websites have a stake, are sponsored or super biased towards authors so i prefer to just talk to fellow players/gm's whose opinions i value.
+
+====
+
+Imagination!
+
+====
+
+Probably not helpful to you since you seem to be asking more about pre-made stuff but I'll answer anyway.
+I homebrew almost everything. I've tried running pre-made stuff but I hated it. It took almost all the fun out of the game. Sometimes I think I'll save myself some time and just use a city or dungeon map somebody else made but I can never find anything that fits what I envisioned, so I give up and make my own.
+Lately most of my ideas have come from listening to history podcasts. I use my 30-60 minute drive to and from work to think and flesh things out, then write it all down when I get home.
+
+====
+
+for maps:
+http://rpgmapshare.com/
+https://rpgcharacters.wordpress.com/maps/
+https://www.cartographersguild.com/forumdisplay.php?f=39
+http://pyromancers.com/list/1/
+https://donjon.bin.sh/pathfinder/dungeon/
+http://davesmapper.com/
+Pinterest
+Google images
+Making my own either crudely drawing it or with software
+I should add that I mainly use roll20
+
+====
+
+My campaign is a sandbox styled game, and all of the adventures, except for a few key locations, are all homebrewed adventures. All of my maps I make from scratch using Maptools. In regards to the pre-builts I use, I generally look for ones that lack any ties to a campaign, mostly dungeons or the like without any real story, allowing me to add my own spin to the place, bringing it into my world.
+
+====
+
+I always try to have sidequests ready to go, depending on where the party is (dungeon, city, wilderness, etc.). I get them from Pathfinder Society scenarios and various 3rd-party adventures I have collected over time.
+You need to pick something that: • is CL appropriate • is short/long enough to fill what you need • you can design a 'way back' to the major storyline • environment appropriate or customizable • perhaps find a way to introduce a future NPC or story feature the party can connect to, as if it was planned all along
+
+====
+
+I run a game using Roll20 and Discord for voice communication. I listen to the RP dialogue of my players, and the in or out of character planning they do, to get an idea of where they are going or what they intend. The players know material doesn't create itself so they are pretty good at flagging what their plans are. I combine this with a personalised downtime file each player has which includes a generalised item wishlist and any personal goals or projects.
+I make my own Adventure Paths, maps and so-one using online resources. I use the PRD to identify creatures by terrain & climate and then decide on a theme for an area; which guides how I select creatures for the encounters. I usually plan by hex for the wilderness journeys, so the players choose how they get somewhere and that decides what they encounter. Dungeons/Castles I plan by corridor and room. There are multiple paths to the same goal, usually defined by the different approaches of the player characters.
+If the players do step off all the various paths leading to their goals, the ideas of where they are going next have already been developed so I can adjust encounters or situations as they arise.
+I have read some of the low level products for Pathfinder as a way of adjusting my GM style and exploring examples of what can be done with the game and setting. As a general rule though I would not run an off the shelf product. Part of what I enjoy about GMing is making the materials myself and then being surprised by what the players do with it.
+
+====
+
+Any film, story, or picture can become an adventure if you tweak it hard enough. All the ideas get put in a massive list of notebooks (I use Evernote), and I tinker with them and mix-and-match whenever I can.
+The one I'm currently writing is based on the Night on Bald Mountain segment from Fantasia, mixed with that awful/awesome Krampus movie starring Ben from Parks and Rec.
+
+====
+
+Paizo's various adventure paths and modules are a good resource. Though, to be honest I almost always have to heavily rework them to give my PCs real challenges and to maintain a pace I like. So, I go to them for subject material, but basically just do what I want from there.
+
+====
+
+I kind of maintain a rough idea of the setting (which is a world in which the broad geography is the same as Earth, but with seriously anachronistic technology and races and stuff), and consider what they are trying to do and where it could fit into this world. I try to sprinkle a bunch of hooks into descriptions of things they encounter, which lead to things that I have some plans for, but if they don't bite, I improvise.
+For example, we once ended up with a very lengthy session of them planning a business for a logging operation that had been run by cultists (who were wanted criminals). They wiped the cultists out, and decided to take possession of the operation. Had them find workers, negotiate salaries and get permits with the city, etc. From looking at how they reacted to this progression of events, I knew they were engaged, and it was a hit.
+In another instance, the party decided to split up and explore the city. The one character is a bit of a crazy drug addict, and at the end of the sessions snuck away from the person babysitting him. We had some absences the next few weeks, including the addict, and with his agreement, had him be captured by a local gang so the others went on a mini quest to save him. This was a way to continue while maintaining immediate story progression and not really leave anyone out, and it was fun
+
+====
+
+I'm a new DM and I've honestly just been searching r/dndnext for keywords that are relevant to what I'm looking for. Are you familiar with Ravelry (it's a knitting website)? Because I want an equivalent of Ravelry's pattern browser and advanced search for every hobby I have, and I think D&D has that whole multi-source thing going that knitting shares that would make it massively useful, and I badly wanted this function the other day when I was trying to find a good murder mystery.
+The first thing I want to do is to restrict adventures by source: does it come from a book, a magazine (a book that I own, a magazine that I own - I don't usually utilise this on Ravelry because I'm too lazy to enter stuff that I own), is it available online free, is it available for purchase in print, is it available for purchase online, is it available in English, where can I buy it.
+Then I'd want to be able to search by edition and recommended level, number of players and estimated length.
+Then once I'd restricted my adventure results to just stuff I could potentially use for my party - the right edition, in a format that's accessible to me, for a price I like, for the right level of players, for the right number of players; maybe you want setting here, too - I would start looking at more detail. So maybe genre or tone or setting, either like, Faerun or whatever or (more to my tastes personally) urban, rural, dungeon, castle ... blah, more experienced players and DMs than I am would no doubt come up with a better list. Potentially these could be checkmarks rather than bullets, so your setting could be an urban dungeon. And tone - you know, cheerful, neutral, farcical, dark.
+Then I would want introductory plot hooks, but I think this is where it might start breaking down a bit. Some are obvious. Kidnapping, murder mystery, dungeon crawl. But I would wonder about, like, say you have a riddle-heavy adventure. Is that a plot type or a setting type? I'm not sure how you'd manage that, but it's information I'd like to know.
+THEN once I'd restricted all of that information and come up with the appropriate set of adventures for my party that would fit within my campaign I would start sorting through everything that fit.
+I'd probably want to do a few different things: favourite/bookmark my preferred things through the website, so I can come back to them (being able to group things together in my favourites would be good, too); take notes on things that I'd bookmarked; possibly be able to distinguish between stuff I'd actually run and stuff I hadn't. I'd also want to be able to see everybody else's notes ("This encounter slaughtered my level 4 party even though it said it was an easy encounter for level 3 players"). And I'd want to be able to see how many times DMs had played that adventure (and probably sort by that when I searched). AND I'd want a summary/synopsis of the adventure, maybe by chapter if the adventure was chaptered.
+There are probably loads of other things more experienced DMs can come up with but those are the things I can think of off the top of my head!
+
+====
+
+I almost exclusively create everything I run. I can't tell you where my ideas specifically come from, but I can tell you I have a document listing all of them and pull from there to build campaigns.
+
+====
+
+I Run my own adventure. AP are nice but they lack comedy and sometimes combat is just way too easy. Besides, reading a hundred pages takes a lot of time. It's a lot faster for me to make up stuff as I go. I'm quite satisfied with the quality as well and they are too.
+For encounters :
+donjon.bin.sh
+Pathfinder NPC Generator on google.
+Advanced Spell Search
+Advanced Beastiary Search
+PCGEN
+
+====
+
+Everything is an adventure. Anything is an adventure. Every desire or whim on the part of the players is a plot-hook. Any whim or idea I have can get dropped in as a plot-hook. If they take it up, great. If they dont. fine. Filed away for another day.
+Player: "I wonder what happened to <NPC>" (I make note of this. I dash out a couple of ideas on a card. I may or may not dangle clues in front of that PC the next session)
+Me: (reading a book) "Holy Satan's Hat Collection! The description of this library is really cool. Im making note of that." Next time the wizard goes looking to do research, guess what?
+Players: "Aw man. I wish <PC> hadnt died before we could afford resurrection." Me: jotting down notes to run a plot to let them find a way to find their buddy again
+As for challenge levels, I wing it. There are formulae and lots of tools online to help a GM get in the ballpark of challenges. Fine tuning is done on the fly.
+
+====
+
+I just make something up. I always play in homebrew settings, so I typically just think of what would most likely be there and look it up. If it's wrong CR, I'll lower its level a bit to make it easier
+
+====
+
+I'm not super experienced, but I've been using a combination of modules grafted into a homebrew based on an older campaign series (what we now call an AP). I've been running into some issues, like my players being overpowered for their level (fixed with homemade boost templates - like level templates but boosts only ability scores, HP, attack bonuses, and AC, no level-dependent abilities).
+
+====
+
+For me, I use the world of Golarion. So no matter where my players are, I can reach for the world guide, see what's in the direction they're going, and throw some new challenges at them.
+Whether they're heading to Oppara on a diplomatic mission, getting involved in border skirmishes in Nirmathas, or just heading out with a caravan through Varisia, everything I need is right there.
+
+====
+
+I'm a baby DM. I've started a Forgettable Realms campaign and I'm using the official campaigns, along with AdventureLeague stuff.
+I have an archive of all Dungeon magazine, and Dragon magazine (until it became Dragon+).
+I have a large collection of files from DMsGuild/DriveThruRPG, some given to me by the creators, many others were free.
+I'm pulling stuff from every edition (if I can fit/lampshade it into the timeline) and crowdsourcing ideas from other DMs I know IRL.
+I began with "The Master's Vault" on Roll20, changed everything, and still haven't finished the main part of that micro-story because I've loaded it with so much more. I wanted my "students" to actually have an attachment to "the master" so I've basically drawn it out with side adventures... and now they're level 5. I'll be wrapping up that part of the story and moving onto official campaign stuff now.
+But, the meat of what you're asking... I tend to look at the footnotes of the FR wiki to see where info came from... and I go look it up. Want stuff about Waukeen (a driving force in my campaign)? See what materials in which she's mentioned via the Wikia page's footnotes.
+
+====
+
