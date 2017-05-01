@@ -16,6 +16,15 @@
 	      });
 */		  
 		  
+		  
+		  
+		  $('.expand').click(function(){
+			  var eid = $(this).attr("id").substring(1);
+			  console.log(eid);			  
+		      $('#content'+eid).slideToggle('slow');
+		  });
+		  
+		  
 		  $(".rand").each(
 			  function (){
 			  	

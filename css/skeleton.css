@@ -476,6 +476,9 @@ display:none;
 	text-align:center;
 }
 
+.hidden {
+	display: none;
+}
 .plots{
 	font-size:20px;
 }
