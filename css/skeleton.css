@@ -497,3 +497,6 @@ display:none;
 .constant {
 	width: 160px;
 }
+html {
+    overflow-y: scroll; 
+}
