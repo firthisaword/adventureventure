@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>AV: Browse Plots</title>
+  <title>AV: Soup</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -27,30 +27,55 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/util.js"></script>
+<script src="js/adventures.js"></script>
+<script src="js/plots.js"></script>
 <script src="js/people.js"></script>
+<script src="js/places.js"></script>
+<script src="js/util.js"></script>
 <script>
 // Change this for whichever adventure is around
 	var adventure = "";
-
-	function display_people(){
-			$('#people').html(peopleby(adventure,50));
-	}
-	 $(document).ready(function(){
-	 //shuffle(plots);
-		 people.sort(srt(null,'source'));
-		 display_people();
+	var imgwidth = 100;
 	
 
+	
+	function update_buttons(){
+		for (x in filters){
+			if (filters[x] == 1){
+				$('#'+x).addClass("button-primary");
+			} else {
+				$('#'+x).removeClass("button-primary");
+			}
+		}
+		if (sum(filters)==4){
+			$(".allfilter").addClass("button-primary");
+		} else {
+			$(".allfilter").removeClass("button-primary");
+		}
+		
+		display_soup();
+	}
+	
+	function display_soup(){
+		
+		$('#everything').html(build_html_soup(imgwidth,filters));
+	}
+	
+	 $(document).ready(function(){
+		 display_soup();
+		 
+ 		$("#random").click(function() {
+ 		  console.log("Randomizing...");
+ 		  //$("button").each(function(){$(this).removeClass("button-primary")});
+ 		  //$(this).addClass("button-primary");
+ 		  shuffle(soup);
+ 		  display_soup();
+ 		});
+		 
 
+	});
+	 	
 
-		$("#random").click(function() {
-		  console.log("Randomizing...");
-		  //$("button").each(function(){$(this).removeClass("button-primary")});
-		  //$(this).addClass("button-primary");
-		  shuffle(people);
-		  display_people();
-		});
 	
 /*		$( "#sorted" ).click(function() {
 		  console.log("Sorting...");
@@ -61,7 +86,7 @@
 		  
 		});
 */
-	});
+
 
 
 
@@ -78,16 +103,24 @@
 	  <div class="row">
 			  
 			  	<p class="right">You are logged in as <a href="">CatMolville</a></p>
-				<h5><a href="index.html">Home</a> &mdash; <a href="people.html">People</a></h5>
+				<h5><a href="index.html">Home</a> &mdash; <a href="soup.html">Soup</a></h5>
 		</div>
 	
 
-				<h1 class="center">People &amp; Factions </h1>
+				<h1 class="center">Adventure Soup </h1>
 				<div class="center">
 				<button id="random">Randomize</button>
+				<button class="constant allfilter button-primary" id="fall"><i class="fa fa-lg fa-s15"></i> SOUP</button>
 			</div>	
-				<div class="row" id="people">
-				</div>
+			<div class="center">
+				<button class="constant filter button-primary" id="fadv"><i class="fa fa-lg fa-book"></i> Adventures</button>
+				<button class="constant filter button-primary" id="fplots"><i class="fa fa-lg fa-bookmark"></i> Plots</button>
+				<button class="constant filter button-primary" id="fppl"><i class="fa fa-lg fa-user"></i> People</button>
+				<button class="constant filter button-primary" id="fpla"><i class="fa fa-lg fa-map"></i> Places</button></div>
+				<div class="row" id="everything">
+			</div>
+			
+			
 <!--  <div class="row">
 				
 					<form>

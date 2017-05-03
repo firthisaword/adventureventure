@@ -27,20 +27,93 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/util.js"></script>
+<script src="js/adventures.js"></script>
 <script src="js/plots.js"></script>
+<script src="js/people.js"></script>
+<script src="js/places.js"></script>
+<script src="js/util.js"></script>
 <script>
 // Change this for whichever adventure is around
 	var adventure = "";
-
-	function display_plots(){
-			$('#plots').html(plotsby(adventure));
+	var index = 0;
+	var arr = build_filtered_array();
+	function display_d(){
+		var htmls = return_solo(arr[index]);
+		$("#display").html(htmls);
+		
+	}
+	function forward(){
+	  console.log("Forward...");
+	  //$("button").each(function(){$(this).removeClass("button-primary")});
+	  //$(this).addClass("button-primary");
+	  index = (index + 1) % arr.length;
+	  display_d();
+	}
+	
+	function back(){
+	  console.log("Back...");
+	  //$("button").each(function(){$(this).removeClass("button-primary")});
+	  //$(this).addClass("button-primary");
+	  if (index==0) index = arr.length - 1;
+	  else index -= 1;
+	  display_d();
+	}
+	
+	function update_buttons(){
+		for (x in filters){
+			if (filters[x] == 1){
+				$('#'+x).addClass("button-primary");
+			} else {
+				$('#'+x).removeClass("button-primary");
+			}
+		}
+		if (sum(filters)==4){
+			$(".allfilter").addClass("button-primary");
+		} else {
+			$(".allfilter").removeClass("button-primary");
+		}
+		
+		display_soup();
 	}
 	 $(document).ready(function(){
 	 //shuffle(plots);
-		 plots.sort(srt(null,'source'));
-		 display_plots();
-	
+		 //plots.sort(srt(null,'source'));
+		 //display_plots();
+		 display_d();
+
+
+
+		 $(document).keydown(function(e) {
+		     switch(e.which) {
+		         case 37: // left
+					 back()
+		         break;
+
+		         case 38: // up
+		         break;
+
+		         case 39: // right
+					 forward()
+		         break;
+
+		         case 40: // down
+					 
+		         break;
+
+		         default: return; // exit this handler for other keys
+		     }
+		     e.preventDefault(); // prevent the default action (scroll / move caret)
+		 });
+
+
+ 		$("#prev").click(function() {
+ 		 	back();
+		  
+ 		});
+ 		$("#next").click(function() {
+			forward();
+		  
+ 		});
 
 
 
@@ -48,8 +121,9 @@
 		  console.log("Randomizing...");
 		  //$("button").each(function(){$(this).removeClass("button-primary")});
 		  //$(this).addClass("button-primary");
-		  shuffle(plots);
-		  display_plots();
+		  shuffle(arr);
+		  index = 0;
+		  display_d();
 		});
 	
 /*		$( "#sorted" ).click(function() {
@@ -77,16 +151,95 @@
 	  <div class="row">
 			  
 			  	<p class="right">You are logged in as <a href="">CatMolville</a></p>
-				<h5><a href="index.html">Home</a> &mdash; <a href="plots.html">Plots</a></h5>
-				<h1 class="center">Plots</h1>
+				<h5><a href="index.html">Home</a> &mdash; <a href="Timber.html">Timber</a></h5>
 		</div>
 	<div class="center">
-	<button id="random">Randomize</button>
+		<h1>Adventure Timber</h1>
+		<button class="constant" id="random">Randomize</button>
+		
+	</div>
+	<div class="center">
+
+				<button class="constant" id="prev">Previous</button>
+	<button class="constant" id="next">Next</button>	
+
+
+<div style="margin: auto; width:300px;" id="display"></div>
 </div>
-	<div class="row" id="plots">
-		
-		
- </div>
+
+
+<!-- adventures
+<h5>&mdash; <i class="fa fa-book fa-lg"></i> &mdash;</h5>
+<h5>Fall of the Gray Veil</h5>
+<p class="center"><strong>4e, Level 2-4</strong></p>
+
+<p>The restless spirit of a blind boy has drained the area around Baron's Hill of all color. The party finds out that a necromancer is turning the villagers' remains into powder and brewing potions of reanimation. They have to defeat him, then chase down the goblin who has the boy's essence flowing through his veins.</p>
+
+<a href="grey.html" target="blank" class="button">Details</a>
+				  <h4><a class="star"><i class="fa fa-star-o fa-2x" title="Save"></i></a></h4>
+				  <form id="notes" class="hidden"><textarea class="u-full-width" disabled>(add your notes here)</textarea>
+  				<label for="exampleRecipientInput">Add to:</label>
+  				<select class="u-full-width" id="exampleRecipientInput">
+  			        <option value="Option 1" selected>Cool stuff that inspires me</option>
+  					<option value="Option 2" disabled>New folder</option>
+  	      		</select>
+				  </form>
+-->
+<!-- Place
+<h5>&mdash; <i class="fa fa-map fa-lg"></i> &mdash;</h5>
+<h5>Friend Of My Enemy</h5>
+<img src="images/heathen.friend.png" width="300px"></img>
+<p class="center"><strong>Tactical, Combat</strong></p>
+<p><em>A riverboat moored on a sheltered shale beach.</em></p>
+<p>The rocky boat and the beach become the battleground for a Tiefling Darkblade attack.</p>
+<p class="center"><a target="blank" href='heathen.html'>Heathen</a></p>
+
+				  <h4><a class="star"><i class="fa fa-star-o fa-2x" title="Save"></i></a></h4>
+				  <form id="notes" class="hidden"><textarea class="u-full-width" disabled>(add your notes here)</textarea>
+  				<label for="exampleRecipientInput">Add to:</label>
+  				<select class="u-full-width" id="exampleRecipientInput">
+  			        <option value="Option 1" selected>Cool stuff that inspires me</option>
+  					<option value="Option 2" disabled>New folder</option>
+  	      		</select>
+				  </form>
+
+-->
+<!-- person
+<h5>&mdash; <i class="fa fa-user fa-lg"></i> &mdash;</h5>
+<h5>Baron Davian Ryckar</h5>
+<p style="text-align:left;">War hero and the baron of a small village who left for war and never returned. He bequeathed his small fortune and the village itself to its inhabitants. He had to stand up to a former comrade-in-arms who had started to dabble in the dark arts and ask him to leave the area.
+
+</p>
+<p><a target="blank" href='grey.html'>Fall of the Gray Veil</a></p>
+
+				  <h4><a class="star"><i class="fa fa-star-o fa-2x" title="Save"></i></a></h4>
+				  <form id="notes" class="hidden"><textarea class="u-full-width" disabled>(add your notes here)</textarea>
+  				<label for="exampleRecipientInput">Add to:</label>
+  				<select class="u-full-width" id="exampleRecipientInput">
+  			        <option value="Option 1" selected>Cool stuff that inspires me</option>
+  					<option value="Option 2" disabled>New folder</option>
+  	      		</select>
+				  </form>
+-->
+
+
+<!-- plot
+<h5>&mdash; <i class="fa fa-bookmark fa-lg"></i> &mdash;</h5>
+<h5 style="text-align:left;">Elves and orcs try to live in harmony but get massacred by segregationist zealots.</h5>
+<p><a target="blank" href='bog.html'>Blood of Gruumsh</a></p>
+
+				  <h4><a class="star"><i class="fa fa-star-o fa-2x" title="Save"></i></a></h4>
+				  <form id="notes" class="hidden"><textarea class="u-full-width" disabled>(add your notes here)</textarea>
+  				<label for="exampleRecipientInput">Add to:</label>
+  				<select class="u-full-width" id="exampleRecipientInput">
+  			        <option value="Option 1" selected>Cool stuff that inspires me</option>
+  					<option value="Option 2" disabled>New folder</option>
+  	      		</select>
+				  </form>
+
+-->
+
+
 <!---
 	  <div class="row">
 				<h1 class="center">Plots</h1>

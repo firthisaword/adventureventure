@@ -29,7 +29,30 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="stars.js"></script>
+<script src="js/util.js"></script>
+<script src="js/adventures.js"></script>
+<script src="js/plots.js"></script>
+<script src="js/places.js"></script>
+<script src="js/people.js"></script>
+
+<script>
+// Change this for whichever adventure is around
+	var adventure = "bog";
+
+	function display_plots(){
+			$('#plots').html(plotsby(adventure));
+	}
+	 $(document).ready(function(){
+		 $('#details').html(single_adventure(adventure));
+		 $('#plots').html(plotsby(adventure));
+		 $('#places').html(placesby(adventure));
+		 $('#people').html(peopleby(adventure));
+	});
+
+
+
+</script>
+	 <script src="js/stars.js"></script>
  
 
 </head>
@@ -50,11 +73,19 @@
 			  	<a class="a-right button" href="dbd.html">Next</a>
 				
 			</div>
-	  <div class="row">
-
-				<h1 class="center">Blood of Gruumsh <a class="star"><i class="fa fa-star-o"></i></a></h1>
-</div>				
+	  
 				
+				
+
+<div id="details"></div>
+
+<h3>Plots <i class="expand fa fa-chevron-down" id="e01"></i> </h3>
+<div class="" id="content01"><div class="row" id="plots"></div></div>
+<h3>People <i class="expand fa fa-chevron-down" id="e02"></i> </h3>
+<div class="" id="content02"><div class="row" id="people"></div></div>
+<h3>Places <i class="expand fa fa-chevron-down" id="e03"></i> </h3>
+<div class="" id="content03"><div class="row" id="places"></div></div>
+	<!--			
 	<div class="row">
 		
 				<div class="one-third column">
@@ -234,7 +265,7 @@
 
 <div id="popup_div" class="popup_msg">
    Saved!
-</div>
+</div>-->
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>

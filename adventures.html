@@ -27,7 +27,47 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="stars.js"></script>
+<script src="js/util.js"></script>
+<script src="js/adventures.js"></script>
+<script>
+// Change this for whichever adventure is around
+
+
+	function display_adventures(){
+			$('#adventures').html(all_adventures());
+	}
+	 $(document).ready(function(){
+	 //shuffle(plots);
+		 //adventures.sort(srt(null,'source'));
+		 display_adventures();
+	
+
+
+
+		$("#random").click(function() {
+		  console.log("Randomizing...");
+		  //$("button").each(function(){$(this).removeClass("button-primary")});
+		  //$(this).addClass("button-primary");
+		  shuffle(advarr);
+		  display_adventures();
+		});
+	
+/*		$( "#sorted" ).click(function() {
+		  console.log("Sorting...");
+		  $("button").each(function(){$(this).removeClass("button-primary")});
+		  $(this).addClass("button-primary");
+		  people.sort(srt(null,'source'));
+		  display_people();
+		  
+		});
+*/
+	});
+
+
+
+</script>
+	 <script src="js/stars.js"></script>
+	 
 
 </head>
 <body>
@@ -42,8 +82,14 @@
 		</div>
 	
 
-	  <div class="row">
 				<h1 class="center">Adventures</h1>
+				<div class="center">
+				<button id="random">Randomize</button>
+			</div>	
+				<div class="row" id="adventures">
+				</div>
+<!--
+	  <div class="row">
 				<form>
 
 				<div class="two columns">
@@ -256,7 +302,7 @@
 		</div>
 	</div>
 	
-	
+	-->
 	
 	  
  

@@ -27,7 +27,46 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="stars.js"></script>
+<script src="js/util.js"></script>
+<script src="js/places.js"></script>
+<script>
+// Change this for whichever adventure is around
+	var adventure = "";
+
+	function display_places(){
+			$('#places').html(placesby(adventure,200));
+	}
+	 $(document).ready(function(){
+	 //shuffle(plots);
+		 places.sort(srt(null,'source'));
+		 display_places();
+	
+
+
+
+		$("#random").click(function() {
+		  console.log("Randomizing...");
+		  $("button").each(function(){$(this).removeClass("button-primary")});
+		  $(this).addClass("button-primary");
+		  shuffle(places);
+		  display_places();
+		});
+	
+		$( "#sorted" ).click(function() {
+		  console.log("Sorting...");
+		  $("button").each(function(){$(this).removeClass("button-primary")});
+		  $(this).addClass("button-primary");
+		  places.sort(srt(null,'source'));
+		  display_places();
+		  
+		});
+
+	});
+
+
+
+</script>
+	 <script src="js/stars.js"></script>
 
 </head>
 <body>
@@ -42,8 +81,15 @@
 		</div>
 	
 
-	  <div class="row">
+
 				<h1 class="center">Places &amp; Maps</h1>
+				<div class="center">
+				<button id="random">Randomize</button>
+			</div>	
+				<div class="row" id="places">
+				</div>				
+				
+<!--
 					<form>
 
 					<div class="two columns">
@@ -368,13 +414,11 @@ Source: <a href="heathen.html">Heathen</a>
 Source: <a href="heathen.html">Heathen</a>		
 </div></div>
 
-
+-->
 
 
 
  
-  </div>
-
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
