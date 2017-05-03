@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>AV: Blood of Gruumsh</title>
+  <title>AV: Village of Hommlet</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -37,9 +37,12 @@
 
 <script>
 // Change this for whichever adventure is around
-	var adventure = "bog";
+	var path = $(location).attr('pathname').split("/").pop();
+	var adventure = path.substring(0,path.length-5);
+	console.log(adventure);
 
 	 $(document).ready(function(){
+		 document.title = "AV: " + gettit(adventure);
 		 $('#details').html(single_adventure(adventure));
 		 $('#plots').html(plotsby(adventure));
 		 $('#places').html(placesby(adventure));

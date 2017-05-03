@@ -18,6 +18,10 @@ function zero(obj){
 	}
 	
 }
+
+function gettit(obj){
+	return adventures[obj].name;
+}
 function one(obj){
 	for (x in obj){
 		obj[x] = 1;
@@ -198,23 +202,26 @@ function getadventure(obj){
 function peopleby(adventure,imgwidth=50){
 		//console.log("hahahaha")
 		var allpeople = get_table_head(imgwidth);
-
+		var p = 0;
 	    for (x in people){
 	   	 
 	   	 if (adventure=="" || people[x].src == adventure){
 			 //console.log(plots[x]);	 
 			 allpeople += getperson(people[x]);
+			 p += 1;
 			 //console.log(allplots);
  	
 	    }
 		
 	}
 	allpeople+= get_table_tail();
-	return allpeople;
+	if (p>0) return allpeople;
+	else return "";
 }
 
 	function plotsby(adventure,imgwidth=50){
 		//console.log("hahahaha")
+		var p = 0;
 		var allplots = get_table_head(imgwidth);
 
 	    for (x in plots){
@@ -222,29 +229,31 @@ function peopleby(adventure,imgwidth=50){
 	   	 if (adventure=="" || plots[x].src == adventure){
 			 //console.log(plots[x]);	 
 			 allplots += getplot(plots[x]);
- 	
+ 			 p += 1;
 	    }
 		
 	}
 	allplots+=get_table_tail();
-	return allplots;
+	if (p>0) return allplots;
+	else return "";
 }
  
 function placesby(adventure,imgwidth=200){
 		//console.log("hahahaha")
 		var allplaces = get_table_head(imgwidth);
-
+		var p = 0;
 	    for (x in places){
 	   	 
 	   	 if (adventure=="" || places[x].src == adventure){
 			 //console.log(plots[x]);	 
 			 allplaces += getplace(places[x],imgwidth);
- 	
+			 p+= 1;
 	    }
 		
 	}
 	allplaces+= get_table_tail();
-	return allplaces;
+	if (p>0) return allplaces;
+	else return "";
 }
  
 

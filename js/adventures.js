@@ -62,12 +62,108 @@ var heathen =
 		type: "adventure",
 		notes: "(your notes here)"
 	};
+var atc = 
+	{
+		src: "atc",
+		name: "Against the Cult of the Reptile God",
+		author: "Douglas Niles",
+		edition: "1e",
+		level: "1-3",
+		pages: "?",
+		source: "TSR",
+		sourceurl: "http://www.dmsguild.com/product/17056/N1-Against-the-Cult-of-the-Reptile-God-1e?it=1",
+		synopsis: "Terror by night! The village of Orlane is dying. Once a small and thriving community, Orlane has become a maze of locked doors and frightened faces. Strangers are shunned, trade has withered. Rumors flourish, growing wilder with each retelling. Terrified peasants flee their homes, abandoning their farms with no explanation. Others simply disappear...",
+		image: "atcotrg.jpg",
+		type: "adventure",
+		notes: "(your notes here)"
+	};
+var border = 
+	{
+		src: "border",
+		name: "Keep On the Borderlands",
+		author: "Gary Gygax",
+		edition: "1e",
+		level: "1-3",
+		pages: "?",
+		source: "TSR",
+		sourceurl: "http://www.dmsguild.com/product/17158/B2-The-Keep-on-the-Borderlands-Basic?it=1",
+		synopsis: "Player characters begin by arriving at the eponymous keep, and can base themselves there before investigating the series of caverns in the nearby hills teeming with monsters. These Caves of Chaos house multiple species of vicious humanoids. Plot twists include a treacherous priest within the keep, hungry lizardmen in a nearby swamp, and a mad hermit in the wilderness. It typifies the dungeon crawls associated with beginning D&D players, while permitting some limited outdoor adventures.",
+		image: "border.jpg",
+		type: "adventure",
+		notes: "(your notes here)"
+	};
+var freya = 
+	{
+		src: "freya",
+		name: "The Crucible of Freya",
+		author: "Clark Peterson &amp; Bill Webb",
+		edition: "3e",
+		level: "1-2",
+		pages: "?",
+		source: "Necromancer Games",
+		sourceurl: "http://www.drivethrurpg.com/product/1443/The-Crucible-of-Freya?it=1",
+		synopsis: "Player characters begin by arriving at the eponymous keep, and can base themselves there before investigating the series of caverns in the nearby hills teeming with monsters. These Caves of Chaos house multiple species of vicious humanoids. Plot twists include a treacherous priest within the keep, hungry lizardmen in a nearby swamp, and a mad hermit in the wilderness. It typifies the dungeon crawls associated with beginning D&D players, while permitting some limited outdoor adventures.",
+		image: "border.jpg",
+		type: "adventure",
+		notes: "(your notes here)"
+	};
+var hommlet = 
+	{
+		src: "hommlet",
+		name: "The Village of Hommlet",
+		author: "Gary Gygax",
+		edition: "1e",
+		level: "1",
+		pages: "?",
+		source: "Necromancer Games",
+		sourceurl: "http://www.drivethrurpg.com/product/1443/The-Crucible-of-Freya?it=1",
+		synopsis: "The Village of Hommlet has grown up around a crossroads in a woodland. Once far from any important activity, it became embroiled in the struggle between gods and demons when the Temple of Elemental Evil arose but a few leagues away. Luckily of its inhabitants, the Temple and its evil hordes were destroyed a decade ago, but Hommlet still suffers from incursions of bandits and strange monsters.",
+		image: "hommlet.jpg",
+		type: "adventure",
+		notes: "(your notes here)"
+	};
+var shadow = 
+	{
+		src: "shadow",
+		name: "Keep on the Shadowfell",
+		author: "Bruce Cordell &amp; Mike Mearls",
+		edition: "4e",
+		level: "1-3",
+		pages: "?",
+		source: "Wizards of the Coast",
+		sourceurl: "http://www.drivethrurpg.com/product/110212/H1-Keep-on-the-Shadowfell--QuickStart-Rules-4e",
+		synopsis: "Kobold raiders are menacing the Nentir Vale village of Winterhaven. They attack the player characters who are also traveling to Winterhaven. When the player characters arrive at Winterhaven, they are asked to clean out the kobold nest. The player characters soon discover that the kobolds are pawns of Kalarel, a priest of Orcus, Demon Prince of Undeath. Kalarel has a lair at a nearby ruined keep that contains the Shadow Rift, once a gateway to the Shadowfell and is no longer in use. Kalarel plans to reopen the Shadow Rift to connect the material world to Orcus's temple in the Shadowfell. This unleashes an army of undead upon the unsuspecting region. The player characters journey to the keep and descend through its crypts, resulting in a final climactic confrontation with Kalarel.",
+		image: "shadowfell.jpg",
+		type: "adventure",
+		notes: "(your notes here)"
+	};
+var evil = 
+	{
+		src: "evil",
+		name: "Return to the Temple of Elemental Evil",
+		author: "Bruce Cordell &amp; Mike Mearls",
+		edition: "4e",
+		level: "1-3",
+		pages: "?",
+		source: "Wizards of the Coast",
+		sourceurl: "http://www.drivethrurpg.com/product/28447/Return-to-the-Temple-of-Elemental-Evil-3e",
+		synopsis: "Years ago, brave heroes put the denizens of the Temple of Elemental Evil to the sword. Now, dark forces whisper again in the shadows of the once-deserted temple - forces far more insidious and dangerous than any sane person could dream. Evil has risen again to threaten the village of Hommlet. Characters battle the power of darkness in Hommlet and beyond, forging their way through hundreds of dire encounters before reaching the fiery finale. Designed as the backbone of a full campaign, Return to the Temple of Elemental Evil takes characters from 4th to as high as 14th level. This deluxe adventure builds on the groundwork of the original Temple of Elemental Evil (1985), as well as other classic adventures. However, none of those products are necessary to enjoy this one.",
+		image: "evil.jpg",
+		type: "adventure",
+		notes: "(your notes here)"
+	};
 
 var adventures = {
 	bog: bog, 
+	atc: atc, 
+	freya: freya, 
+	hommlet: hommlet, 
+	border: border, 
+	evil: evil, 
 	dbd: dbd, 
 	grey: grey,
+	shadow: shadow,
 	heathen: heathen
 };
 
-var advarr = [bog, dbd, grey, heathen];
+var advarr = [atc, bog, dbd, freya, grey, heathen, hommlet, border, shadow, evil];
