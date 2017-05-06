@@ -356,14 +356,15 @@ function placesby(adventure,imgwidth=200){
 }
 */
 function all_items(type="all",imgwidth=50,src="all"){
+	console.log(src);
 	var allitems = get_table_head(imgwidth);
 	var found = 0;
 	for (x in everything){
 		//console.log(src[x].type);
 		if ((type=="all") || (everything[x].type == type)) {
-			if ((src=="all") || (everything[x].src == src))
+			if ((src=="all") || (everything[x].src == src)){
 				found += 1;
-			allitems += table_row(everything[x] , imgwidth);
+			allitems += table_row(everything[x] , imgwidth);}
 		}
 	}
 	allitems += get_table_tail();
