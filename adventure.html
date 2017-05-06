@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>AV: Blood of Gruumsh</title>
+  <title>AV: ADD AN ADVENTURE</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -26,7 +26,7 @@
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	  
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="images/favicon-book.ico">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/adventures.js"></script>
@@ -37,13 +37,38 @@
 
 <script>
 // Change this for whichever adventure is around
-	var adventure = "bog";
+	
+
+	
+	//var adventure = "bog";
 
 	 $(document).ready(function(){
-		 $('#details').html(single_adventure(adventure));
-		 $('#plots').html(plotsby(adventure));
-		 $('#places').html(placesby(adventure));
-		 $('#people').html(peopleby(adventure));
+		 //console.log(qs);
+		 var adventure = qs["id"];
+/*		 var nexts = next(adventure);
+		 console.log(nexts);
+		 
+		 var prevs = prev(adventure);
+		 console.log(prevs);
+		 if (prevs) {
+		 	$('#navbut').append('<a class="button" href="adventure.html?adv='+prevs.src+'">Previous</a>')
+		 }
+		 if (nexts) {
+		 	$('#navbut').append('<a class="a-right button" href="adventure.html?adv='+nexts.src+'">Next</a>')
+		 }*/
+		 
+		 $('#details').html(adventure_details(adventure));
+//		 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; Adventure Details</h5>');
+		document.title = everything[adventure].name;
+		 var plots = all_items("plot",100,adventure);
+		 if (plots != "") $('#plots').html('<h3>Plots <i class="expand fa fa-chevron-down" id="e01"></i> </h3><div class="" id="content01">'+plots+'</div>');
+
+		 var places = all_items("place",200,adventure);
+		 if (places != "") $('#places').html('<h3>Places <i class="expand fa fa-chevron-down" id="e02"></i> </h3><div class="" id="content02">'+places+'</div>');
+
+		 var people = all_items("person",100,adventure);
+		 if (people != "") $('#people').html('<h3>People <i class="expand fa fa-chevron-down" id="e03"></i> </h3><div class="" id="content03">'+people+'</div>');
+
 	});
 
 
@@ -60,14 +85,12 @@
   <div class="container">
 	  <div class="row">
 			  
-			  	<p class="right">You are logged in as <a href="">CatMolville</a></p>
-				<h5><a href="index.html">Home</a> &mdash; <a href="adventures.html">Adventures</a> </h5>
+			  	<p class="right">You are logged in as <a href="savedcol.html?id=archive">TheBestDM</a></p>
+				<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; Adventure Details</h5>
 		</div>
 	
 
-	  <div class="row">
-			  
-			  	<a class="a-right button" href="dbd.html">Next</a>
+	  <div class="row" id="navbut">
 				
 			</div>
 	  
@@ -75,13 +98,9 @@
 				
 
 <div id="details"></div>
-
-<h3>Plots <i class="expand fa fa-chevron-down" id="e01"></i> </h3>
-<div class="" id="content01"><div class="row" id="plots"></div></div>
-<h3>People <i class="expand fa fa-chevron-down" id="e02"></i> </h3>
-<div class="" id="content02"><div class="row" id="people"></div></div>
-<h3>Places <i class="expand fa fa-chevron-down" id="e03"></i> </h3>
-<div class="" id="content03"><div class="row" id="places"></div></div>
+<div class="row" id="plots"></div>
+<div class="row" id="people"></div>
+<div class="row" id="places"></div>
 	<!--			
 	<div class="row">
 		

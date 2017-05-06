@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>AV: Soup</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/adventures.js"></script>
+<script src="js/plots.js"></script>
+<script src="js/people.js"></script>
+<script src="js/places.js"></script>
+<script src="js/collections.js"></script>
+<script src="js/util.js"></script>
+<script>
+// Change this for whichever adventure is around
+	var imgwidth = 100;
+	
+	 var col = qs["id"];
+
+	
+
+	function display_collection(){
+		$('#everything').html(show_collection(getSavedCollection(col)));
+	}
+	
+	 $(document).ready(function(){
+		 display_collection();
+		 
+
+	});
+	 	
+
+	
+/*		$( "#sorted" ).click(function() {
+		  console.log("Sorting...");
+		  $("button").each(function(){$(this).removeClass("button-primary")});
+		  $(this).addClass("button-primary");
+		  people.sort(srt(null,'source'));
+		  display_people();
+		  
+		});
+*/
+
+
+
+
+</script>
+	 <script src="js/stars.js"></script>
+	 
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+	  <div class="row">
+			  
+			  	<p class="right">You are logged in as <a href="savedcol.html?id=archive">TheBestDM</a></p>
+				<h5><a href="index.html">Home</a> &mdash; <a href="collections.html">Collections</a></h5>
+		</div>
+	
+
+				<div class="row" id="everything">
+			</div>
+			
+			
+<!--  <div class="row">
+				
+					<form>
+
+					<div class="two columns">
+						<label for="exampleRecipientInput">Sort by:</label>
+						<select class="u-full-width" id="exampleRecipientInput">
+					        <option value="Option 1" disabled>Seen</option>
+							<option value="Option 2" selected>Adventure</option>
+							<option value="Option 3" disabled>Rating</option>
+							<option value="Option 4" disabled>Random</option>
+			      		</select>
+					</div>
+				
+  
+  
+				</form>
+</div>				
+				
+	<div class="row">
+		
+		
+			<table class="u-full-width plots">
+				<col width="10">
+				<col width="10">
+				<col width="10">
+			  <thead>
+				  <th></th><th></th><th></th><th>Person</th><th>Role</th><th>Source</th><th>Save</th>
+			  </thead>
+			  <tbody>
+			    <tr>
+				<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+				<td><strong>Tathar of Turilon</strong>: A young elven cleric determined to unravel a mystery his order is trying to cover up.</td>
+				<td>Questgiver</td>
+				<td><a href="bog.html">Blood of Gruumsh</a></td>
+				<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+			    </tr>
+				
+			    <tr>
+				<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+				<td><strong>Venak</strong>: An orc cleric of Gruumsh suffering from visions about the old Colony and the Blood of Gruumsh is leading an orc scouting party to discover what happened in the Colony. </td>
+				<td>Villain</td>
+				<td><a href="bog.html">Blood of Gruumsh</a></td>
+				<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+			    </tr>
+				
+			    <tr>
+				<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+				<td><strong>Phayrd</strong>: "Banished Daughter", "The Blood of Gruumsh", a fabled daughter of Gruumsh and an elf mother. Believing she existed led to the creation of a sect preaching that elves and orcs could live in peace and worship together. </td>
+				<td>Villain</td>
+				<td><a href="bog.html">Blood of Gruumsh</a></td>
+				<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+			    </tr>
+				
+				
+				    <tr>
+					<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+					<td><strong>Farian Blackhand</strong>: A mercenary and scoundrel who's looking for Doran Underhelm and his mercenary band of adventurers as the latter has not paid him for a recent job. </td>
+					<td>Questgiver</td>
+					<td><a href="dbd.html">Dead by Dawn</a></td>
+					<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+				    </tr>
+
+				    <tr>
+					<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+					<td><strong>Garvus Harbane</strong>: A grizzled old priest of Orcus who cleared a rival temple for him and ran it until he tried to prolong his life with a dangerous necromantic ritual. The ritual backfired, killing him and his followers and reanimating them as undead horrors. </td>
+					<td>Villain</td>
+					<td><a href="dbd.html">Dead by Dawn</a></td>
+					<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+				    </tr>
+
+		    <tr>
+			<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+			<td><strong>Doran Underhelm</strong>: Ruthless ratcatcher who put his party at the service of a cleric of Orcus for a necromantic spell and was killed in the botched ritual. His corpse and that of his companions reanimate along with the cleric's to challenge the players in the temple's rectory. </td>
+			<td>Villain</td>
+			<td><a href="dbd.html">Dead by Dawn</a></td>
+			<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+		    </tr>
+			
+ 		    <tr>
+ 			<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+ 			<td><strong>Tyrik Gerithson</strong>: cleric of Erathis who decided it was a good idea to build a temple in the dangerous lands beyond the King's Wall. His temple did not last, and his goddess turned away from him for his stupidity as the minions of Orcus slaughtered his flock. </td>
+ 			<td></td>
+			<td><a href="dbd.html">Dead by Dawn</a></td>
+ 			<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+ 		    </tr>  
+			
+		    <tr>
+			<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+			<td><strong>Fin</strong>: A blind orphan boy who was found stumbling through a field in the dead of winter, half frozen to death. Brigands had killed his parents and older sister, so the boy suffered horrible nightmares and sometimes projected his auditory memories onto the real world. His spirit has been disturbed by the theft of his bones and has drained the color from the area.</td>
+			<td></td>
+			<td><a href="grey.html">Fall of the Gray Veil</a></td>
+			<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+		    </tr>
+
+		   
+		    <tr>
+			<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+			<td><strong>Baron Davian Ryckar</strong>: war hero and the baron of a small village who left for war and never returned. He bequeathed his small fortune and the village itself to its inhabitants. He had to stand up to a former comrade-in-arms who had started to dabble in the dark arts and ask him to leave the area.</td>
+			<td></td>
+			<td><a href="grey.html">Fall of the Gray Veil</a></td>
+			<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+		    </tr>
+			
+		    <tr>
+			<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+			<td><strong>Talther Yorn</strong>: a necromancer who has been active in the area of a small village for several years, quietly expanding an old tomb into his laboratory. Brews potions of spectral form to let his servants rob graves without disturbing the dirt above. Turns living creatures into undead with potions made from old bones.</td>
+			<td>Villain</td>
+			<td><a href="grey.html">Fall of the Gray Veil</a></td>
+			<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+		    </tr>
+
+		    <tr>
+			<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+			<td><strong>Grygori Dilvia</strong>: reclusive loner living on the edge of town, secretly a ghast and a grave robber for the area's necromancer. His cave is hidden and full of traps, and he is the terror of the local children. </td>
+			<td>Villain</td>
+			<td><a href="grey.html">Fall of the Gray Veil</a></td>
+			<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+		    </tr>
+			
+		    <tr>
+			<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+			<td><strong>Jaryn</strong>: A noble veteran paladin who led an expedition by the Order of the Sun to eradicate the Hand of Naarash death cult. After slaying their leader in the temple, Jaryn became corrupted by the cult's dark powers and now leads it, imposing discipline and building it into an army. He believing that death is merciful salvation in a world where goodness and light are long lost. </td>
+			<td>Villain</td>
+			<td><a href="heathen.html">Heathen</a></td>
+			<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+		    </tr>
+
+		   
+		    <tr>
+			<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+			<td><strong>Emesha</strong> A cleric of Pelor and member of the Light of the Sun order. For years engaged in holding back the Hand of Naarash death cult, Emesha believes striking at its heart, the mountainous Temple of Naarash, is the only way to bring an end to the cult before it becomes too powerful.</td>
+			<td>Questgiver</td>
+			<td><a href="heathen.html">Heathen</a></td>
+			<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+		    </tr>
+
+		    <tr>
+			<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+			<td><strong>Perren Auldwyl</strong>: Widower and elder of the town of Erstlin. Strangely aloof and secretive, Perren keeps interrupting the PC's investigations and preventing the villagers from speaking to them candidly. He is secretly letting smugglers store and run weapons and armor for the Hand of Naarash death cult through his village, and he is wary of incurring their wrath.</td>
+			<td></td>
+			<td><a href="heathen.html">Heathen</a></td>
+			<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+		    </tr>
+
+		    <tr>
+			<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+			<td><strong>Glasur</strong>: A gruff dwarf and the last moonboat captain on the treacherous Moonsfall: fast-flowing glacial torrents. He offers to bring the PCs north on the river, hiding as best he can that his family was massacred by the Hand of Naarash death cult in a village upriver several years ago.</td>
+			<td></td>
+			<td><a href="heathen.html">Heathen</a></td>
+			<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+		    </tr>
+			
+			
+		    <tr>
+			<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+			<td><strong>Naarash</strong>: A barlgura (large elemental demon). His life is tied to a massive stone called the Eye of Naarash discovered by giants and laid in at the heart of a mountainous temple. If the PCs kill his chosen warrior, Naarash demands that one of them replace him or attacks them viciously, his dreams of regaining power through the Hand of Naarash death cult shattered.</td>
+			<td>Villain</td>
+			<td><a href="heathen.html">Heathen</a></td>
+			<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+		    </tr>
+			
+			
+
+<!--			    <tr>
+			      <td>Acolyte discovers cover-up in religious order's archives <a href="bog.html">(?)</a><a href="">(+)</a></td>
+			    </tr>
+			    <tr>
+			      <td>Investigate a long-lost religious colony in the forest <a href="bog.html">(?)</a><a href="">(+)</a></td>
+			    </tr>
+			    <tr>
+			      <td>Defend a building against an orc scouting party <a href="bog.html">(?)</a><a href="">(+)</a></td>
+			    </tr>
+		
+			  </tbody>
+			</table>
+			
+	-->
+	</div>
+	  
+ 
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

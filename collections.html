@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>AV: Adventures</title>
+  <title>Collections</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -24,44 +24,28 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="images/favicon-archive.ico">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/util.js"></script>
 <script src="js/adventures.js"></script>
+<script src="js/plots.js"></script>
+<script src="js/places.js"></script>
+<script src="js/people.js"></script>
+<script src="js/util.js"></script>
 <script>
 // Change this for whichever adventure is around
 
 
-	function display_adventures(){
+function display_adventures(){
 			$('#adventures').html(all_adventures());
 	}
 	 $(document).ready(function(){
 	 //shuffle(plots);
 		 //adventures.sort(srt(null,'source'));
-		 display_adventures();
+		 $('#collections').html(list_collections());
 	
+	 });
 
-
-
-		$("#random").click(function() {
-		  console.log("Randomizing...");
-		  //$("button").each(function(){$(this).removeClass("button-primary")});
-		  //$(this).addClass("button-primary");
-		  shuffle(advarr);
-		  display_adventures();
-		});
-	
-/*		$( "#sorted" ).click(function() {
-		  console.log("Sorting...");
-		  $("button").each(function(){$(this).removeClass("button-primary")});
-		  $(this).addClass("button-primary");
-		  people.sort(srt(null,'source'));
-		  display_people();
-		  
-		});
-*/
-	});
 
 
 
@@ -77,16 +61,25 @@
   <div class="container">
 	  <div class="row">
 			  
-			  	<p class="right">You are logged in as <a href="">CatMolville</a></p>
-				<h5><a href="index.html">Home</a> &mdash; <a href="adventures.html">Adventures</a></h5>
+			  	<p class="right">You are logged in as <a href="savedcol.html?id=archive">TheBestDM</a></p>
+				<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; Collections</h5>
+				
 		</div>
 	
 
-				<h1 class="center">Adventures</h1>
-				<div class="center">
-				<button id="random">Randomize</button>
-			</div>	
-				<div class="row" id="adventures">
+				<h1 class="center">Collections</h1>
+				<h3>Mega-collections</h3>
+			<div class="center">	
+<a class="constantt button" style="padding-left: 20px;" href="megacol.html?type=all"><i class="fa fa-lg fa-bath"></i> Everything</a>
+<a class="constantt button" style="padding-left: 80px;" href="megacol.html?type=adv"><i class="fa fa-lg fa-book"></i> All adventures</a>
+<a class="constantt button" style="padding-left: 140px;" href="megacol.html?type=plots"><i class="fa fa-lg fa-bookmark"></i> All plot hooks</a>
+<a class="constantt button" style="padding-left: 140px;" href="megacol.html?type=people"><i class="fa fa-lg fa-user"></i> All people</a>
+<a class="constantt button" style="padding-left: 140px;" href="megacol.html?type=places"><i class="fa fa-lg fa-map"></i> All places</a>
+
+				</div>
+				
+				
+				<div class="row" id="collections">
 				</div>
 <!--
 	  <div class="row">

@@ -37,9 +37,26 @@
 
 <script>
 // Change this for whichever adventure is around
-	var adventure = "border";
+	
+	var qs = (function(a) {
+	    if (a == "") return {};
+	    var b = {};
+	    for (var i = 0; i < a.length; ++i)
+	    {
+	        var p=a[i].split('=', 2);
+	        if (p.length == 1)
+	            b[p[0]] = "";
+	        else
+	            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+	    }
+	    return b;
+	})(window.location.search.substr(1).split('&'));
+	
+	//var adventure = "bog";
 
 	 $(document).ready(function(){
+		 console.log(qs);
+		 var adventure = qs["adv"];
 		 $('#details').html(single_adventure(adventure));
 		 $('#plots').html(plotsby(adventure));
 		 $('#places').html(placesby(adventure));
@@ -60,7 +77,7 @@
   <div class="container">
 	  <div class="row">
 			  
-			  	<p class="right">You are logged in as <a href="">CatMolville</a></p>
+			  	<p class="right">You are logged in as <a href="savedcol.html?id=archive">TheBestDM</a></p>
 				<h5><a href="index.html">Home</a> &mdash; <a href="adventures.html">Adventures</a> </h5>
 		</div>
 	

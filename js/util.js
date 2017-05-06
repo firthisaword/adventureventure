@@ -1,10 +1,41 @@
 var soup = advarr.concat(plots, people, places);
-var filters = {
+/*var filters = {
 	fadv: 1,
 	fplots: 1,
 	fppl: 1,
 	fpla: 1
+};*/
+
+var everything = {};
+for (i in soup){
+	everything[soup[i].id] = soup[i];
+}
+console.log("A good start:");
+console.log(everything);
+
+var ccollections = {
+	adventure: advarr,
+	plot: plots,
+	person: people,
+	place: places
 };
+
+var qs = (function(a) {
+    if (a == "") return {};
+    var b = {};
+    for (var i = 0; i < a.length; ++i)
+    {
+        var p=a[i].split('=', 2);
+        if (p.length == 1)
+            b[p[0]] = "";
+        else
+            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+    }
+    return b;
+})(window.location.search.substr(1).split('&'));
+
+// UTIL FUNCTIONS
+
 function sum(obj){
 	var s = 0;
 	for (x in obj){
@@ -18,7 +49,6 @@ function zero(obj){
 	}
 	
 }
-
 function gettit(obj){
 	return adventures[obj].name;
 }
@@ -28,7 +58,6 @@ function one(obj){
 	}
 	
 }
-
 function shuffle(a) {
     var j, x, i;
     for (i = a.length; i; i--) {
@@ -38,6 +67,54 @@ function shuffle(a) {
         a[j] = x;
     }
 }
+function update_buttons(){
+	f = filters();
+	for (x in f){
+		if (f[x] == 1){
+			$('#'+x).addClass("button-primary");
+		} else {
+			$('#'+x).removeClass("button-primary");
+		}
+	}
+	if (sum(f)==4){
+		$(".allfilter").addClass("button-primary");
+	} else {
+		$(".allfilter").removeClass("button-primary");
+	}
+	
+	
+	
+}
+
+function filters() {
+	if (localStorage.filterdata) { filtero = JSON.parse(localStorage.filterdata);
+	} else {
+		filtero = {
+			a: 1,
+			p: 1,
+			c: 1,
+			m: 1
+		};
+		localStorage.filterdata = JSON.stringify(filtero);
+	};
+	
+	if (!localStorage.newonly) localStorage.newonly=0;
+	return filtero;
+}
+
+
+
+function next(adv){
+	var curr = advarr.indexOf(adventures[adv]);
+	if (curr == advarr.length-1) return null;
+	return advarr[curr + 1];
+}
+
+function prev(adv){
+	var curr = advarr.indexOf(adventures[adv]);
+	if (curr == 0) return null;
+	return advarr[curr-1];
+}
 
 function srt(desc,key) {
  return function(a,b){
@@ -46,157 +123,164 @@ function srt(desc,key) {
   };
 }
 
-function get_table_head(imgwidth=100){
-	return '<table class="u-full-width"><col width="5"><col width="5"><col width="'
-	+imgwidth
-	+'"><col><col width="20%"><thead></thead><th/><th/><th/><th>Details</th><th>Notes</th><tbody>';
-	
-}
 
-function get_table_tail(){
-	return '</tbody></table>';
-}
 
 function get_solo_form(note){
-	return '<form id="notes" class="hidden"><textarea class="u-full-width" disabled>'
+	return '<p class="center">Saved!</p><form id="notes" class="hidden"><textarea class="u-full-width" disabled>'
 	+note
 	+'</textarea><label for="exampleRecipientInput">Add to:</label><select class="u-full-width" id="exampleRecipientInput"><option value="Option 1" selected>Cool stuff that inspires me</option><option value="Option 2" disabled>New folder</option></select></form>'
 }
 
-
-function soloadv(obj){
-	soloa = '<h5>&mdash; <i class="fa fa-book fa-lg"></i> &mdash;</h5><h5>'
-	+obj.name
-	+'</h5><p class="center"><strong>'
-	+obj.edition
-	+', Level '
-	+obj.level
-	+'</strong></p><p>'
-	+obj.synopsis
-	+'</p><a href="'
-	+obj.src
-	+'.html" target="blank" class="button">Details</a><h4><a class="star"><i class="fa fa-star-o fa-2x" title="Save"></i></a></h4>';
-	return soloa;
+function adventure_url(src){
+	return "adventure.html?id=" + src.src;
 }
 
+function item_url(obj){
+	return "item.html?id=" + obj.id;
+}
 
+function randomize(){
+	
+  console.log("Randomizing...");
+  //$("button").each(function(){$(this).removeClass("button-primary")});
+  //$(this).addClass("button-primary");
+
+  var rand = random_valid_id();
+  console.log(rand);
+  if (rand != "na") window.location = "item.html?id=" + rand + "&r=1";
+}
+
+function random_valid_id(){
+	
+//	 var oldtype = localStorage.lasttype;
+	 var oldid = localStorage.lastid;
+	
+	var id = "na";
+	//var id = -1;
+	var f = filters();
+	// var newonly = localStorage.newonly;
+	if (sum(f)){
+		var viable_types = [];
+		for (z in f){
+			if (f[z]=='1') viable_types.push(z);
+		}
+
+
+		var new_id;
+		var new_item;
+		var full_id;
+		do {
+			new_id = Object.keys(everything)[Math.floor(Math.random()*Object.keys(everything).length)];
+			// if the type is forbidden
+			new_item = everything[new_id];
+			full_id = new_item.id;
+			
+		} while ((viable_types.indexOf(full_id.split(".")[0]) == -1) || (full_id == oldid ));
+		return full_id;
+	}
+	else {
+		return "x";
+	}
+/*	if (sum(f)){
+		do {
+			index = Math.floor(Math.random() * everything.length);
+			}
+		while (false);
+		
+
+	//select random type from viable_types
+		if (viable_types.length > 0) type = viable_types[Math.floor(Math.random() * viable_types.length)];
+	
+		col = ccollections[type];
+		do {id = Math.floor(Math.random() * col.length);}
+			while (id == Number(oldid)));
+	} else {
+		type = "x"
+		id = "x"
+	};
+	
+	return [type,id];*/
+}
+
+function soloadv(obj){
+	//obj = advarr[id];
+	soloa = '<h3 class="center">&mdash; <a title="Direct link" href="'
+	+ adventure_url(obj)
+	+'" target=_blank><i class="fa fa-book fa-lg"></i></a> &mdash;</h3><p class="center"><strong>'
+	+obj.edition
+	+' Adventure, Level '
+	+obj.level
+	+'</strong></p><h5 class="center">'
+	+obj.name
+	+'</h5><p>'
+	+obj.synopsis
+	+'</p><div class="center"><a href="'
+	+adventure_url(obj)
+	+'" target=_blank class="button ucenter">Details</a></div>'
+	+ add_star_code(obj.id);
+	return soloa;
+}
 function soloplace(obj){
-	solopl = '<h5>&mdash; <i class="fa fa-map fa-lg"></i> &mdash;</h5><h5>'
+	//obj = places[id];
+	solopl = '<h3 class="center">&mdash; <a title="Direct link" href="'
+	+ item_url(obj)
+	+'" target=_blank><i class="fa fa-map fa-lg"></i></a> &mdash;</h3><p class="center"><strong>'
+	+obj.tags
+	+'</strong></p><h5 class="center">'
 	+obj.name
 	+'</h5><img src="images/'
 	+obj.image
-	+'" width="300px"></img><p class="center"><strong>'
-	+obj.tags
-	+'</strong></p><p><em>'
+	+'" width="300px" class="u-center"></img><p><em>'
 	+obj.caption
 	+'</em></p><p>'
 	+obj.description
-	+'</p><p class="center"><a target="blank" href="'
-	+ obj.src
-	+ '.html">'
-	+ adventures[obj.src].name
-	+'</a></p><h4><a class="star"><i class="fa fa-star-o fa-2x" title="Save"></i></a></h4>'
-	+ get_solo_form(obj.notes);
+	+'</p><p class="center">Adventure:<br/><a target=_blank href="'
+	+ adventure_url(obj)
+	+ '">'
+	+ everything[obj.src].name
+	+'</a></p>'
+		+ add_star_code(obj.id);
 	return solopl;
 	
 }
 function soloperson(obj){
-	soloper = '<h5>&mdash; <i class="fa fa-user fa-lg"></i> &mdash;</h5><h5>'
+	//obj = people[id];
+	
+	var tag="";
+	if (obj.tag) tag = obj.tag;
+	
+	soloper = '<h3 class="center">&mdash; <a title="Direct link" href="'
+	+ item_url(obj)
+	+'" target=_blank><i class="fa fa-user fa-lg"></i></a> &mdash;</h3><p class="center"><strong>'
+	+ tag
+	+'</strong></p><h5 class="center">'
 	+obj.name
 	+'</h5><p>'
 	+obj.description
-	+'</p><p class="center"><a target="blank" href="'
-	+obj.src
-	+'.html">'
-	+adventures[obj.src].name
-	+'</a></p><h4><a class="star"><i class="fa fa-star-o fa-2x" title="Save"></i></a></h4>'
-	+get_solo_form(obj.notes)
+	+'</p><p class="center">Adventure:<br/><a target=_blank href="'
+	+adventure_url(obj.src)
+	+'">'
+	+everything[obj.src].name
+	+'</a></p>'
+	+ add_star_code(obj.id);
 	return soloper;
 }
-
-
 function soloplot(obj){
-	var oneplot = '<h5>&mdash; <i class="fa fa-bookmark fa-lg"></i> &mdash;</h5><h5 style="text-align:left;">'
+	//obj = plots[id];
+	var oneplot = '<h3 class="center">&mdash; <a href="'
+	+ item_url(obj)
+	+'" target=_blank"><i class="fa fa-bookmark fa-lg"></i></a> &mdash;</h3><p class="center"><strong>Plot hook</strong></p><h5 style="margin: 50px 0px 20px 0px; text-align:left;">'
 	+ obj.text
-	+'</h5><p class="center"><a target="blank" href="'
-	+ obj.src
-	+ '.html">'
-	+ adventures[obj.src].name
-	+ '</a></p><h4><a class="star"><i class="fa fa-star-o fa-2x" title="Save"></i></a></h4><form id="notes" class="hidden"><textarea class="u-full-width" disabled>'
-	+ obj.notes
-	+ '</textarea><label for="exampleRecipientInput">Add to:</label><select class="u-full-width" id="exampleRecipientInput"><option value="Option 1" selected>Cool stuff that inspires me</option><option value="Option 2" disabled>New folder</option></select></form>'
+	+'</h5><p style="padding-top:20px" class="center">Adventure:<br/><a target=_blank href="'
+	+ adventure_url(obj)
+	+ '">'
+	+ everything[obj.src].name
+	+ '</a></p>'
+	+ add_star_code(obj.id);
 	return oneplot;
 }
 
-function getplot(obj){
- var plot_html =
-	'<tr><td><a class="star"><i class="fa fa-star-o fa-2x" title="Save"></i></a></td><td><a href="'
- +obj.src
- +'.html" title="Source"><i class="center fa fa-2x fa-link"></i></a></td><td class="center"><i class="fa fa-3x fa-bookmark" title="Plot"></i></td><td><h5>'
- +obj.text
- +'</h5></td><td><form><textarea class="u-full-width" id="exampleMessage" disabled>'
- +obj.notes+'</textarea></form></td></tr>';
- //console.log(allplots);
- 
- return plot_html;
-}
 
-function getperson(obj){
-	 		var person_html =
-				'<tr><td><a class="star"><i class="fa fa-star-o fa-2x" title="Save"></i></a></td><td><a href="'
-			 +obj.src
-			 +'.html" title="Source"><i class="center fa fa-2x fa-link"></i></a></td><td class="center"><i class="fa fa-3x fa-user" title="Person"></i></td><td><h5>'
-			 +obj.name
-			 +'</h5><p>'
-			 +obj.description
-			 +'</p></td><td><form><textarea class="u-full-width" id="exampleMessage" disabled>'
-			 +obj.notes+'</textarea></form></td></tr>';
-			 return person_html;
-}
-
-
-function getplace(obj,imgwidth=100){
-		//console.log("hahahaha")
-	var place_html =
-	   	 	'<tr><td><a class="star"><i class="fa fa-star-o fa-2x" title="Save"></i></a></td><td><a href="'
-	   		 +obj.src
-			 +'.html" title="Source"><i class="center fa fa-2x fa-link"></i></a></td><td class="center"><img width="'
-			+imgwidth
-			+'" src="images/'
-			+obj.image
-			 +'"></img></td><td><h5>'
-	   		 +obj.name
-	   		 +'</h5><p><em>'
-			 +obj.caption
-			 +"</em></p><p>"
-			 +obj.description
-			 +'</p></td><td><p><strong>'
-			 +obj.tags
-			 +'</strong></p><form><textarea class="u-full-width" id="exampleMessage" disabled>'
-	   		 +obj.notes+'</textarea></form></td></tr>';
-			 //console.log(allplots);
-			 return place_html;
-}
-
-function getadventure(obj){
-			  var advhtml=
-				'<tr><td><a class="star"><i class="fa fa-star-o fa-2x" title="Save"></i></a></td><td><a href="'
-			 +obj.src
-			 +'.html" title="Source"><i class="center fa fa-2x fa-link"></i></a></td><td class="center"><i class="fa fa-3x fa-book" title="Adventure"></i></td><td><h5><a href="'
-			 +obj.src
-			 +'.html">'
-			 +obj.name
-			 +'</a></h5><p>'
-			 +obj.synopsis
-			 +'</p></td><td><p><strong>'
-			 +obj.edition
-			 +", Level "
-			 +obj.level
-			 +'</strong></p><form><textarea class="u-full-width" id="exampleMessage" disabled>'
-			 +obj.notes+'</textarea></form></td></tr>';
-			 //console.log(allplots);
-			 return advhtml;
-}
 
 
 function peopleby(adventure,imgwidth=50){
@@ -207,7 +291,7 @@ function peopleby(adventure,imgwidth=50){
 	   	 
 	   	 if (adventure=="" || people[x].src == adventure){
 			 //console.log(plots[x]);	 
-			 allpeople += getperson(people[x]);
+			 allpeople += person_row(x);
 			 p += 1;
 			 //console.log(allplots);
  	
@@ -219,7 +303,7 @@ function peopleby(adventure,imgwidth=50){
 	else return "";
 }
 
-	function plotsby(adventure,imgwidth=50){
+function plotsby(adventure,imgwidth=50){
 		//console.log("hahahaha")
 		var p = 0;
 		var allplots = get_table_head(imgwidth);
@@ -228,7 +312,7 @@ function peopleby(adventure,imgwidth=50){
 	   	 
 	   	 if (adventure=="" || plots[x].src == adventure){
 			 //console.log(plots[x]);	 
-			 allplots += getplot(plots[x]);
+			 allplots += plot_row(x);
  			 p += 1;
 	    }
 		
@@ -246,7 +330,7 @@ function placesby(adventure,imgwidth=200){
 	   	 
 	   	 if (adventure=="" || places[x].src == adventure){
 			 //console.log(plots[x]);	 
-			 allplaces += getplace(places[x],imgwidth);
+			 allplaces += place_row(x,imgwidth);
 			 p+= 1;
 	    }
 		
@@ -256,170 +340,624 @@ function placesby(adventure,imgwidth=200){
 	else return "";
 }
  
-
-function all_adventures(){
-		//console.log("hahahaha")
-		var alladventures = get_table_head(50);
-
-	    for (x in advarr){
-	   	 
-			var this_adv = advarr[x];
-			 //console.log(plots[x]);	 
-			 alladventures += getadventure(this_adv);
-			 //console.log(allplots);
- 	
-	    
-		
+/*function absolutely_all_items(imgwidth=200){
+	var allitems = get_table_head(imgwidth);
+	for (q in soup){
+		var src = soup[q];
+		for (x in src) {
+		//console.log(src[x].type);
+		allitems += table_row(src[x].type, x,imgwidth);
 	}
-	alladventures+=get_table_tail();
-	return alladventures;
+	}
+	allitems += get_table_tail();
+	//console.log(allitems);
+	return allitems;
+	
 }
+*/
+function all_items(type="all",imgwidth=50,src="all"){
+	var allitems = get_table_head(imgwidth);
+	var found = 0;
+	for (x in everything){
+		//console.log(src[x].type);
+		if ((type=="all") || (everything[x].type == type)) {
+			if ((src=="all") || (everything[x].src == src))
+				found += 1;
+			allitems += table_row(everything[x] , imgwidth);
+		}
+	}
+	allitems += get_table_tail();
+	//console.log(allitems);
+	if (found == 0) return "";
+	return allitems;
+}
+
+
+function list_collections(){
+	s = JSON.parse(localStorage.saved);
+	h = "<h3>User Collections</h3>";
+	for (c in s) {
+		var currcol = s[c];
+		if (!currcol.mine)	h += '<h5>' 
+			+ currcol.name 
+			+ ' ('
+			+ currcol.contents.length
+			+ ' items)'
+			+ '</h5><p><strong>Author: '
+			+ currcol.author
+			+ '</strong></p><p>'
+			+ currcol.notes
+			+ '</p><a class="button" href="savedcol.html?id=' 
+			+ currcol.id 
+			+ '" target=_blank>Details</a>';
+	}
+	return h;
+}
+
+function show_collection(col,imgwidth="100"){
+	//get the full collection and build html from there
+	var col_html = "<h1>"
+	+ col.name
+	+ '</h1>';
+	if (col.mine=="0") {
+		col_html += '<h5>Author\'s Collection Notes</h5><p>' + col.notes + '</p>';
+	} else {
+		col_html += '<h5>Your Archive Notes</h5><form onsubmit="return false;"><textarea class="u-full-width" id="colNotes-'
+		+ col.id + '">'	+ col.notes	+ '</textarea><input type="submit" class="button notesave" value="Save" id="save-'+col.id+'"></form>';
+	}
+	
+	var allitems = get_table_head(imgwidth);
+	var found = 0;
+
+	for (x in col.contents){
+		//console.log(src[x].type);
+	//console.log(x);		
+			found += 1;
+			allitems += table_row(everything[col.contents[x].id], imgwidth, col);
+		}
+	
+	allitems += get_table_tail();
+	//console.log(allitems);
+	if (found == 0) col_html += '<h5 class="center">Your archive is empty.</h5>';
+	else col_html += allitems;
+	
+	return col_html;
+}
+
+
+
+
+
  
- 
-function single_adventure(adv){
-	var adv = adventures[adv];
+function adventure_details(adv){
+	var adv = everything[adv];
+	if (adv.pages != "?") apages = adv.pages + ' pages'; else apages = "N/A";
+	console.log(apages);
 	var oneadv = '<h1 class="center">'
 	+ adv.name
-	+ ' <a class="star"><i class="fa fa-star-o fa-2x"></i></a></h1><div class="row"><div class="one-third column"><h5>Summary</h5><p>'
-	+ adv.synopsis
-	+ '</p></div><div class="one-third column"><h5>Details</h5><table class="u-full-width"><thead></thead><tbody><tr><td><strong>Author</strong></td><td>'
-	+ adv.author
-	+ '</td></tr><tr><td><strong>Edition</strong></td><td>'
-	+ adv.edition
-	+ '</td></tr><tr><td><strong>Level</strong></td><td>'
-	+ adv.level
-	+ '</td></tr><tr><td><strong>Length</strong></td><td>'
-	+ adv.pages
-	+ ' pages</td></tr><tr><td><strong>Source</strong></td><td>'
-	+ adv.source
-	+ '</td></tr></tbody></table></div><div class="one-third column"><h5>Notes</h5><form><textarea class="u-full-width" id="exampleMessage">'
-	+ adv.notes
-	+ '</textarea></form></div></div><div class="row"><img class="u-center" src="images/'
+	+ '</h1>'
+	+ add_star_code(adv.id)
+	+ '<div class="row"><img class="u-center" width=400 src="images/'
 	+ adv.image
-	+ '"></div>';
+	+ '"></div><div class="row"><h5>Summary</h5><p>'
+	+ adv.synopsis
+	+ '</p><h5>Details</h5><table class="u-full-width"><thead><th>Author</th><th>Edition</th><th>Level</th><th>Length</th><th>Source</th></thead><tbody><tr><td>'
+	+ adv.author
+	+ '</td><td>'
+	+ adv.edition
+	+ '</td><td>'
+	+ adv.level
+	+ '</td><td>'
+	+ apages
+	+ '</td><td>'
+	+ adv.source
+	+ '</td></tr></tbody></table></div>';
 	return oneadv;
 	
 } 
 
 
-function build_filtered_array(){
-	var filtered_array = [];
-	for (x in soup) {
-		var item = soup[x];
+
+
+
+				
+
+
+
+
+function lookup(type, id){
+	switch (type){
+	case "adventure":
+		return advarr[id];
+		break;
+	case "place":
+		return places[id];
+		break;
+	case "plot":
+		return plots[id];
+		break;
+	case "person":
+		return people[id];
+		break;
+	default:
+		return null;
+		break;
+}
+}
+
+
+function add_star_code(id,size=2){
+	var g;
+	var colls = inColl(id);
+	//var pid = type + "." + id;
+	if (colls.length > 0){
+		//thing exists, set star to on
+		g = '<div class="center">';
+		g += '<a class="star sel" id="' + id + '"><i class="fa fa-star fa-2x" title="Unsave"></i></a></div>'	 
+
+
+	} else{
+		//not saved yet
+		g = '<div class="center">';
+		g += '<a class="star" id="' + id + '"><i class="fa fa-star-o fa-2x" title="Save"></i></a></div>';
+	}
+	return g;
+	/*var c = inColl(type,id);
+	if (c.length > 0){
+		//this has been saved
+		 var output = '<h4 class="center"><a class="sel" id="' + type + '.' + id + '"><i class="fa fa-star fa-2x" title="Save"></i></a></h4><p class="center">Saved to <strong>';
+		 for (x in c) {
+			 output += c[x] + ", ";
+			 
+		 }
+		 output += '</strong></p></a></h4>';
+		 return output;
+	} else {
+	return '<form id="notes" class="hidden"><p style="padding-top: 20px; color:rgb(30, 174, 219);" class="center">Saved to <strong>Archive</strong>!</p><label for="exampleRecipientInput">Change folder:</label><select class="u-full-width" id="exampleRecipientInput"><option value="Option 1" selected>Archive</option><option value="Option 2" disabled>Cool stuff that inspires me</option><option value="Option 3" disabled>+ New folder</option></select><textarea placeholder="(optional notes here)" class="u-full-width"></textarea></form><h4 class="center">'
+		+ '<a class="star" id="' + type + '.' + id + '"><i class="fa fa-star-o fa-2x" title="Save"></i></a></h4>';
+	}*/
+}
+
+function update_star(id,obj){
+//	obj = obj.firstChild();
+	console.log("Update star");
+	var colls = inColl(id);
+	console.log(colls);
+	var pid = "#" + id;
+	console.log(pid);
+	var star_html = "";
+	obj.addClass("sel");
+	if (colls.length > 0){
+		//thing exists, set star to on
+		star_html += '<a><i class="fa fa-star fa-2x" title="Unsave"></i></a>';	 
+
+
+	} else{
+		//not saved yet
+		obj.removeClass("sel");
+		star_html += '<a><i class="fa fa-star-o fa-2x" title="Save"></i></a>';
+	}
+	
+	obj.html(star_html);
+	
+	//obj.attr('style',"color:red;");
+	//$("#"+pid).show();
+}
+function return_solo(id){
+		// update star of this thing
+	console.log("Returning solo " + id);
+	var q = "";
+	if (id == "x") {
+		q = '<h1 style="padding-top: 100px" class="center">¯\\_(ツ)_/¯</h1><p class="center">There doesn\'t seem to be anything here.<br/><a href="item.html">Try again</a> with the full collection.</p>';}
+	else {
+		item = everything[id];
+	//console.log(id);
+	//console.log(item);
 		
+		//console.log(q);
 		switch (item.type){
 		case "adventure":
-			if (filters["fadv"]==1) filtered_array.push(item);
+			q = soloadv(item);
 			break;
 		case "place":
-			if (filters["fpla"]==1) filtered_array.push(item);
+			q = soloplace(item);
 			break;
 		case "plot":
-			if (filters["fplots"]==1) filtered_array.push(item);
+			q = soloplot(item);
 			break;
 		case "person":
-			if (filters["fppl"]==1) filtered_array.push(item);
+			q = soloperson(item);
 			break;
-		}
+		update_star(id);
 		
-	}
-	return filtered_array;
-} 
+		
+	
+
+}
+}
+return q;
+}
 
 
-function return_solo(obj){
-		switch (obj.type){
+
+
+
+
+
+function table_row(item,imgwidth=100,col=null){
+	output = "";
+
+		switch (item.type){
 		case "adventure":
-			return soloadv(obj);
+			output = adv_row(item,imgwidth, col);
 			break;
 		case "place":
-			return soloplace(obj);
+
+			output = place_row(item,imgwidth,col);
 			break;
 		case "plot":
-			return soloplot(obj);
+			output =  plot_row(item,imgwidth,col);
 			break;
 		case "person":
-			return soloperson(obj);
+			output = person_row(item,imgwidth, col);
 			break;
 		}
-		
+	return output;	
+		//get the right thing
 	
 
 }
 
 
-function build_html_soup(imgwidth=100,filters){
-	arr = build_filtered_array(filters);
-	
-	var html_soup = '<table class="u-full-width"><col width="5"><col width="5"><col width="'
+function get_table_head(imgwidth=100){
+	return '<table class="u-full-width"><col width="5px"><col width="'
 	+imgwidth
-	+'"><col><col width="20%"><thead></thead><th/><th/><th/><th>Details</th><th>Notes</th><tbody>';
-	for (x in arr) {
-		var item = arr[x];
-		
-		switch (item.type){
-		case "adventure":
-			html_soup += getadventure(item);
-			break;
-		case "place":
-			html_soup += getplace(item);
-			break;
-		case "plot":
-			html_soup += getplot(item);
-			break;
-		case "person":
-			html_soup += getperson(item);
-			break;
-		}
-		
-	}
-	html_soup += "</tbody></table>";
-	return html_soup;
+	+'px"><col><col width="200px"><thead></thead><tbody>';
+	
 }
+
+function get_table_tail(){
+	return '</tbody></table>';
+}
+
+
+function notes_field(id, col){
+	html = "";
+	if (col == null){
+		return html;
+	} else {
+		var index = indexOfSaved(id, col.contents);
+		var notes = col.contents[indexOfSaved(id, col.contents)].notes;
+		if (col.mine == "1") {
+		
+		
+			html += '<td><form onsubmit="return false;"><label>Your Notes:</label><textarea class="u-full-width" style="height:auto;" id="colNotes-'
+		+ col.id +'-'+ index + '">'	+ notes	+ '</textarea><input class="button notesave" value="Save" id="save-'+col.id+'-'+index+'" type="submit"></form></td>'
+		} else {
+			html += '<td><p><strong>'
+			+ col.author 
+			+'\'s Notes:</strong></p><p><em>'
+			+ notes +'</em></p></td>';
+		}
+	}
+		
+	return html;
+}
+
+function add_star_to_row(obj){
+	var id = obj.id;
+	var g;
+	var colls = inColl(id);
+	//var pid = type + "." + id;
+	if (colls.length > 0){
+		//thing exists, set star to on
+		g = '<td class="center star sel" id="' + id + '">';
+		g += '<a><i class="fa fa-star fa-2x" title="Unsave"></i></a></td>'	 
+
+
+	} else{
+		//not saved yet
+		g = '<td class="center star" id="' + id + '">';
+		g += '<a><i class="fa fa-star-o fa-2x" title="Save"></i></a></td>';
+	}
+	return g;
+	
+	/*<p class="center">Saved to <strong>';
+		for (x in colls) {
+			g += colls[x] + ", ";
+		}
+		g += '</strong></p>*/
+}
+
+function plot_row(obj,imgwidth,col){
+	//console.log(obj.src);
+	
+	var plot_html = '<tr>'
+			+ add_star_to_row(obj)
+			+ '<td class="center"><a href="'
+	+ item_url(obj)
+	+ '" target=_blank><i class="fa fa-3x fa-bookmark" title="Plot"></i></a></td><td><h5>'
+ +obj.text
+	+'</h5><p>Adventure: <a href="'
+	+ adventure_url(obj)
+	+ '" target=_blank>'
+	+ everything[obj.src].name
+	+ '</a></p></td>';
+	plot_html += notes_field(obj.id, col);
+	plot_html+='</tr>';
+ //console.log(allplots);
+ 
+ return plot_html;
+}
+function person_row(obj, imgwidth,col){
+	//var obj = people[id];
+	//console.log(obj.tag);
+	var person_html = '<tr>'
+			+ add_star_to_row(obj)
+			+ '<td class="center"><a href="'
+	+ item_url(obj)
+	+ '" target=_blank><i class="fa fa-3x fa-user" title="Person"></i></a><p class="center"><strong>'
+	+ obj.tag
+	+ '</strong></p></td><td><h5>'
+			 + obj.name
+			 + '</h5><p>'
+			 + obj.description
+	+'</p><p>Adventure: <a href="'
+	+ adventure_url(everything[obj.src])
+	+ '" target=_blank>'
+	+ everything[obj.src].name
+	+ '</a></p></td>';
+	person_html += notes_field(obj.id, col);
+	person_html +='</tr>';
+	//console.log(person_html);
+			 return person_html;
+}
+function place_row(obj,imgwidth=100,col){
+		//console.log("hahahaha")
+	//var obj = places[id];
+	//console.log(obj.image);
+	//console.log(notes);
+	var place_html = '<tr>'
+			+ add_star_to_row(obj)
+			+ '<td class="center"><a href="'
+			+ item_url(obj)
+			+ '" target=_blank><img width="'
+			+imgwidth
+			+'" src="images/'
+			+obj.image
+			 +'"></img></a><p class="center"><strong>'
+			 +obj.tags
+			 +'</strong></p></td><td><h5>'
+	   		 +obj.name
+	   		 +'</h5><p><em>'
+			 +obj.caption
+			 +"</em></p><p>"
+			 +obj.description
+			+'</p><p>Adventure: <a href="'
+	+ adventure_url(everything[obj.src])
+	+ '" target=_blank>'
+	+ everything[obj.src].name
+	+ '</a></p></td>'
+	place_html += notes_field(obj.id, col);
+	place_html +='</tr>';
+			 return place_html;
+}
+function adv_row(obj, imgwidth, col){
+	//console.log(adventure_url(obj));
+			  var advhtml = '<tr>'
+	+ add_star_to_row(obj)
+	+'<td class="center"><a href="'
+			 + adventure_url(obj)
+			 +'" title="Source" target=_blank><i class="fa fa-3x fa-book" title="Adventure"></i></a><p class="center""><strong>'
+			 +obj.edition
+			 +", Level "
+			 +obj.level
+			 +'</strong></p></td><td><h5><a href="'
+			 +adventure_url(obj)
+			 +'">'
+			 +obj.name
+			 +'</a></h5><p>'
+			 +obj.synopsis
+			 +'</p></td>'
+			 advhtml += notes_field(obj.id, col);
+			 advhtml += '</tr>';
+			 //console.log(allplots);
+			 return advhtml;
+}
+
+
+/*function render_collection(id,imgwidth=100){
+	var col = collections[id];
+	var editable = col.mine;
+	var output = ''
+	//title
+	+ '<h1>' + col.name +'</h1>';
+	if (editable==0) {
+		output += '<h5>Author\'s Collection Notes</h5><p>' + col.notes + '</p>';
+	} else {
+		output += '<h5>Your Collection Notes</h5><form><textarea class="u-full-width" class="notesave" id="exampleMessage">'	+ col.notes	+ '</textarea></form>';
+	}
+	
+	output+= '<table class="u-full-width"><col width="5"><col width="5"><col width="'
+	+imgwidth
+	+'"><col><col width="20%"><thead><th/><th/><th/><th>Details</th><th>Notes</th></thead><tbody>';
+	
+	//notes
+	//contents with notes (others' or mine)
+	for (i in col.contents){
+		item = col.contents[i];
+		output += table_row(item.type, item.id, imgwidth, editable, item.notes);
+	}
+	output += '</tbody></table>';
+	return output;
+	
+}*/
+
+function indexOfSaved(id, arr){
+	for (x in arr){
+		o = arr[x];
+		if (o.id == id) return x;
+	}
+	return -1;
+}
+
+
+function getSavedCollection(coll="archive"){
+	var saved = JSON.parse(localStorage.saved);
+//	console.log(saved[coll].contents);
+	return saved[coll];
+}
+
+function inColl(id) {
+	//only with **YOUR COLLECTIONS**
+	var saved = JSON.parse(localStorage.saved);
+	var present = [];
+	for (col in saved) {
+
+		if (saved[col].mine == "1" && indexOfSaved(id,saved[col].contents) != -1) {
+			present.push(col);
+			
+		}
+	}
+//	console.log("Collections");
+//	console.log(present);
+	return present;
+}
+
+function is_saved(id){
+	return (inColl(id).length > 0);
+}
+
+function save(id, notes="", coll="archive",){
+	console.log("Saving..." + id);
+	var	saved = JSON.parse(localStorage.saved);
+	q = indexOfSaved(id, saved[coll].contents);
+	if (q == -1) {
+		saved[coll].contents.push({
+			id: id,
+			notes: notes
+		});
+	}
+	else {
+		saved[coll].contents[q].notes = notes;
+	
+	}
+	localStorage.saved = JSON.stringify(saved);
+	console.log(localStorage.saved);
+	
+}
+
+function save_notes(notes, colname, index=""){
+	console.log(notes);
+	console.log(colname);
+	var	saved = JSON.parse(localStorage.saved);
+	if (index == "") {
+		//console.log(saved[colname]);
+		saved[colname].notes = notes;
+		
+	} else {
+			saved[colname].contents[Number(index)].notes = notes;
+	}
+	localStorage.saved = JSON.stringify(saved);
+}
+
+function unsave(id, notes="", coll="archive"){
+	var	saved = JSON.parse(localStorage.saved);
+	q = indexOfSaved(id, saved[coll].contents);
+	if (q != -1) {
+		saved[coll].contents.splice(q, 1);
+	}
+	
+	
+	localStorage.saved = JSON.stringify(saved);
+	console.log(localStorage.saved);
+	
+}
+
+
 
 $(document).ready(function(){
+	if (!sum(filters())) localStorage.removeItem('filterdata');
+
+	if (!localStorage.saved) {
+		saved = starchive;
+		localStorage.saved = JSON.stringify(saved);
+		//console.log(saved);
+	}
 	
-	$(".allfilter").click(function(){
-		
-		if (sum(filters) == 4){
-			zero(filters);
+/*	$(".allfilter").click(function(){
+		q = filters();
+		if (sum(q) == 4){
+			zero(q);
 		} else {
-			one(filters);
+			one(q);
 		}
+		localStorage.filterdata = JSON.stringify(q);
 		update_buttons();
-		console.log(filters);
 	});
-	
+	*/
 	
 	$(".filter").click(function(){
 		var id = $(this).attr('id');
+		q = filters();
 		console.log(filters[id]);
-		if (filters[id] == 0){
-			filters[id] = 1;
+		if (q[id] == "0"){
+			q[id] = 1;
 		} else {
-			filters[id] = 0;
+			q[id] = 0;
 		}
+		localStorage.filterdata = JSON.stringify(q);
+		console.log(q);
 		update_buttons();
-		console.log(filters);
 	});
-$('body').on("click",'.expand',function(){
-	//console.log($(this));
-	var chevron = $(this);
-	//console.log(chevron);
-	
-	if (chevron.hasClass("fa-chevron-down")){
-			chevron.removeClass("fa-chevron-down");
-			chevron.addClass("fa-chevron-right");
-	} else {
-		chevron.removeClass("fa-chevron-right");
-		chevron.addClass("fa-chevron-down");
-	}
 	
 	
+	$(".sfilter").click(function(){
+		
+		q = localStorage.newonly;
+		if (q == "0"){
+			q = 1;
+		} else {
+			q = 0;
+		}
+		localStorage.newonly = q;
+		console.log(q);
+		update_buttons();
+	});
 	
 	
-  var eid = $(this).attr("id").substring(1);
-  //console.log(eid);			  
-    $('#content'+eid).slideToggle('slow');
-});
+	$('body').on("click",'.notesave',function(){
+		//console.log($(this));
+		//var chevron = $(this);
+		var col = $(this).attr('id').split('-')[1];
+		var item = $(this).attr('id').split('-')[2];
+		var q = "#colNotes-" + col;
+		if (item) q += '-' + item;
+		console.log(q);
+		var notes = $(q).val();
+		save_notes(notes, col, item);
+	});
+	
+	
+	
+	$('body').on("click",'.expand',function(){
+		//console.log($(this));
+		var chevron = $(this);
+		//console.log(chevron);
+	
+		if (chevron.hasClass("fa-chevron-down")){
+				chevron.removeClass("fa-chevron-down");
+				chevron.addClass("fa-chevron-right");
+		} else {
+			chevron.removeClass("fa-chevron-right");
+			chevron.addClass("fa-chevron-down");
+		}
+	
+	
+	
+	
+	  var eid = $(this).attr("id").substring(1);
+	  //console.log(eid);			  
+	    $('#content'+eid).slideToggle('slow');
+	});
 });

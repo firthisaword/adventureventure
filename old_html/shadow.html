@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>AV: Blood of Gruumsh</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	  
+  <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/adventures.js"></script>
+<script src="js/plots.js"></script>
+<script src="js/places.js"></script>
+<script src="js/people.js"></script>
+<script src="js/util.js"></script>
+
+<script>
+// Change this for whichever adventure is around
+	var adventure = "freya";
+
+	 $(document).ready(function(){
+		 $('#details').html(single_adventure(adventure));
+		 $('#plots').html(plotsby(adventure));
+		 $('#places').html(placesby(adventure));
+		 $('#people').html(peopleby(adventure));
+	});
+
+
+
+</script>
+	 <script src="js/stars.js"></script>
+ 
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+	  <div class="row">
+			  
+			  	<p class="right">You are logged in as <a href="savedcol.html?id=archive">TheBestDM</a></p>
+				<h5><a href="index.html">Home</a> &mdash; <a href="adventures.html">Adventures</a> </h5>
+		</div>
+	
+
+	  <div class="row">
+			  
+			  	<a class="a-right button" href="dbd.html">Next</a>
+				
+			</div>
+	  
+				
+				
+
+<div id="details"></div>
+
+<h3>Plots <i class="expand fa fa-chevron-down" id="e01"></i> </h3>
+<div class="" id="content01"><div class="row" id="plots"></div></div>
+<h3>People <i class="expand fa fa-chevron-down" id="e02"></i> </h3>
+<div class="" id="content02"><div class="row" id="people"></div></div>
+<h3>Places <i class="expand fa fa-chevron-down" id="e03"></i> </h3>
+<div class="" id="content03"><div class="row" id="places"></div></div>
+	<!--			
+	<div class="row">
+		
+				<div class="one-third column">
+				<h5>Summary</h5>
+				<p>An elf cleric hires the party to investigate a long-lost religious colony in the woods. Exploring the colony, the party discovers that it belonged to a peaceful sect of elves and orcs worshipping a mythical orc-elf demigod. Its inhabitants were massacred in a raid by elf zealots from the cleric's order. The party is surprised by an orc scouting band during their exploration.</p></div>
+
+
+
+
+
+			<div class="one-third column">
+				<h5>Details</h5>
+				<table class="u-full-width">
+				  <thead>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <td>Steve Winter</td>
+				    </tr>
+				    <tr>
+				      <td>4th Edition</td>
+				    </tr>
+				    <tr>
+				      <td>Low level (4-6)</td>
+				    </tr>
+				    <tr>
+				      <td>17 pages</td>
+				    </tr>
+				    <tr>
+				      <td>Dungeon #210 <a class="button" href="#">Buy</a></td>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
+			
+			<div class="one-third column">
+				<h5>Notes</h5>
+				<form>
+				  <textarea class="u-full-width" placeholder="(start typing your notes here)" id="exampleMessage"></textarea>
+				  <input class="button-primary" type="submit" value="Save">
+				</form>
+			</div>
+			
+			
+			<div class="row">
+				<img class="u-center" src="images/bog.png">
+			</div>
+			
+			
+			
+			
+	  <div class="row">				
+			  	<h3>Plots</h3>
+				
+				
+				<table class="u-full-width plots">
+					<col width="10">
+					<col width="10">
+					<col width="10">
+				  <thead>
+					  <th></th><th></th><th></th><th>Plot</th><th>Save</th>
+				  </thead>
+				  <tbody>
+				    <tr>
+<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+					<td>Elves and orcs try to live in harmony but get massacred by segregationist zealots</td>
+					<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+				    </tr>
+
+				    <tr>
+<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+					<td>Acolyte discovers cover-up in religious order's archives</td>
+					<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+				    </tr>
+				    <tr>
+<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+					<td>Investigate a long-lost religious colony in the forest </td>
+					<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+				    </tr>
+				    <tr>
+<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+					<td>Defend a building against an orc scouting party</td>
+					<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+				    </tr>
+				  </tbody>
+				</table>
+				
+				
+				
+			
+				
+				
+			  </div>
+			  <div class="row">
+			  	<h3>People</h3>
+				
+				
+				
+					<table class="u-full-width plots">
+						<col width="10">
+						<col width="10">
+						<col width="10">
+					  <thead>
+						  <th></th><th></th><th></th><th>Person</th><th>Role</th><th>Save</th>
+					  </thead>
+					  <tbody>
+					    <tr>
+<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+						<td><strong>Tathar of Turilon</strong>: A young elven cleric of Corellon determined to unravel a mystery his order is trying to cover up. </td>
+						<td>Questgiver</td>
+						<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+					    </tr>
+
+					   
+					    <tr>
+<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+						<td><strong>Venak</strong>: An orc cleric of Gruumsh suffering from visions about the old Colony and the Blood of Gruumsh is leading an orc scouting party to discover what happened in the Colony. </td>
+						<td>Villain</td>
+						<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+					    </tr>
+						
+					    <tr>
+<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+						<td><strong>Phayrd</strong>: "Banished Daughter", "The Blood of Gruumsh", a fabled daughter of Gruumsh and an elf mother. Believing she existed led to the creation of a sect preaching that elves and orcs could live in peace and worship together. </td>
+						<td>Villain</td>
+						<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+					    </tr>
+						
+						
+					  </tbody>
+					</table>
+					
+					
+			  </div>
+			  
+			  
+			  
+			  
+			  <div class="row">
+			  	<h3>Places</h3>
+				
+				
+				<table class="u-full-width plots">
+					<col width="10">
+					<col width="10">
+					<col width="10">
+					<col width="200">
+				  <thead>
+					  <th></th><th></th><th></th><th>Map</th><th>Place</th><th>Tags</th><th>Save</th>
+				  </thead>
+				  <tbody>
+					  
+				    <tr>
+						
+<td><i class="fa fa-chevron-up green"></i></td><td class="rand"></td><td><i class="fa fa-chevron-down red"></i></td>
+						<td><img class="img-center u-full-width" src="images/bog.colony.map.png"></td>
+						<td><p><strong>The Colony</strong>: <em>A 3-floor, 19-room dungeon deep in a thick forest with walls made of entwined living branches and vines.</em></p>
+							<p>Religious colony that succumbed to a massacre many years ago, still contains the remains of its defendants and their personal effects. Shrine to Phayrd, a dryad in mourning, a wereboar. </p>
+						</td>
+						<td>Exploration, Combat</td>
+						<td><a class="star"><i class="fa fa-star-o"></i></a></td>
+					</tr>
+				    
+
+
+					  </tbody>
+					</table>
+				
+				
+			  
+	  </div>
+	  
+	  
+	  
+ 
+  </div>
+
+<div id="popup_div" class="popup_msg">
+   Saved!
+</div>-->
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

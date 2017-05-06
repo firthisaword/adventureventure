@@ -31,21 +31,28 @@ $(document).ready(function(){
 			  
 			  
 		  
-	      $("body").on("click","a.star",(function(e){
+	      $("body").on("click",".star",(function(e){
+			  item = $(this).attr('id');
 			  if ($(this).hasClass("sel")) {
 				  $(this).removeClass("sel");
 				  console.log("unsel");
-				  ($(this).html('<i class="fa fa-star-o fa-2x"></i>'));
+				  unsave(item);
+				  
+				  //($(this).html('<i class="fa fa-star-o fa-2x"></i>'));
 				  
 			  } else {
 			
 				  
 				  $(this).addClass("sel");
-				  ($(this).html('<i class="fa fa-star fa-2x"></i>'));
+				  
+				  save(item);
+				  //($(this).html('<i class="fa fa-star fa-2x"></i>'));
 				  
 	          	console.log("sel"); 
 			}
-			  ($("#notes")).slideToggle("fast");
+			console.log($(this));
+			update_star(item,$(this));
+
 	      }));
 		  
 		  

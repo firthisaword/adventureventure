@@ -28,7 +28,21 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="stars.js"></script>
+  <script>
+	$(document).ready(function(){
+  	$("#nuke").click(function(){
+		var r = confirm("This will permanently erase all your data!");
+		console.log(localStorage);
+		if (r == true) {
+		    localStorage.clear();
+			console.log("Local storage reset");
+		} else {
+		    console.log("Crisis averted");
+		}
+		console.log(localStorage);  		
+  	});
+	  	});
+	  </script>
 </head>
 <body>
 
@@ -37,15 +51,13 @@
   <div class="container">
 	  <div class="row">
 			  
-			  	<p class="right">You are logged in as <a href="">CatMolville</a></p>
-				<h5><a href="index.html">Home</a></h5>
+			  	<p class="right">You are logged in as <a href="savedcol.html?id=archive">TheBestDM</a></p>
 		</div>
 	
 
 
 	  <div class="row">
 		  <h1 class='center'>Adventure Venture</h1>
-		  <h5 class="center">Browse, don't search</h5>
 <!---		  <p style="margin:auto auto 20px auto; width:60%">Let's face it, fellow Dungeon Master: you're never going to run <em>Queen of the Spiders</em> as written. It's nine editions stale, and you'd want to customize it for your world anyway. Plus, most pre-written adventures are boring and can't hold a candle to your own imagination. You read them mostly for inspiration.</p>
 			  
 			  <p style="margin:auto auto 20px auto; width:60%">Adventure Venture is a new type of archive for existing adventures that lets you:</p>
@@ -62,10 +74,19 @@
 		  			  </tbody>
 		  			</table>
 		  
-		  </div><div class="row" style="margin:auto; width:60%;">
-<a class="button u-full-width" href="timber.html" style="text-align:center;">Timber</a>
-<a class="button u-full-width" href="soup.html" style="text-align:center;">Soup</a>
-		
+		  </div><div class="row" style="margin:auto; width:60%;"></div>
+<table><thead></thead><tbody>
+	<tr><td><h5>Random browsing</h5><p>See adventures, plot hooks, characters, and maps one at a time.</p></td><td><a class="button u-full-width" href="item.html" style="text-align:center;">Browse</a></td></tr>
+	<tr><td><h5>Collections</h5><p>Official and user-created collections of pre-written content, including adventure paths and campaigns.</p></td><td><a class="button u-full-width" href="collections.html" style="text-align:center;">Collections</a></td></tr>
+	<tr><td><h5>Your archive</h5><p>Save, annotate, and share cool things you've found.</p></td><td><a class="button u-full-width" href="savedcol.html?id=archive" style="text-align:center;">Archive</a></td></tr>
+	<tr><td><h5>RESET EVERYTHING</h5><p>Clear all your data and start fresh</p></td><td><button id="nuke" class="button-primary u-full-width">Reset</button></td></tr>
+	
+	
+	
+	
+	
+</tbody></table>
+
 <!--
 <a class="button button-primary u-full-width" href="archive.html" style="text-align:left; padding-left:20px;"><i class="fa fa-lg fa-archive"></i> Your Archive</a>
 

@@ -27,7 +27,41 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="stars.js"></script>
+<script src="js/adventures.js"></script>
+<script src="js/plots.js"></script>
+<script src="js/places.js"></script>
+<script src="js/people.js"></script>
+<script src="js/util.js"></script>
+
+<script>
+// Change this for whichever adventure is around
+	
+	var qs = (function(a) {
+	    if (a == "") return {};
+	    var b = {};
+	    for (var i = 0; i < a.length; ++i)
+	    {
+	        var p=a[i].split('=', 2);
+	        if (p.length == 1)
+	            b[p[0]] = "";
+	        else
+	            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+	    }
+	    return b;
+	})(window.location.search.substr(1).split('&'));
+	
+	//var adventure = "bog";
+
+	 $(document).ready(function(){
+		 //console.log(qs);
+		 var campaign = colville;
+		 $('#campaign').html(single_campaign(campaign));
+	});
+
+
+
+</script>
+	 <script src="js/stars.js"></script>
 
 </head>
 <body>
@@ -37,41 +71,15 @@
   <div class="container">
 	  <div class="row">
 			  
-			  	<p class="right">You are logged in as <a href="">CatMolville</a></p>
+			  	<p class="right">You are logged in as <a href="savedcol.html?id=archive">TheBestDM</a></p>
 				<h5><a href="index.html">Home</a> &mdash; <a href="playlists.html">Campaigns</a></h5>
 		</div>
 	
 
-	  <div class="row">
-				<h1 class="center">Colville's Awesome Sandbox <a class="star"><i class="fa fa-star-o"></i></a></h1>
-				<h5>Author's Notes</h5>
-				<p>From the mind of Matt Colville comes a set of low-level sandbox adventures that can set the players up for a supermodule like<em> Night Below</em> or <em>Red Hand of Doom</em>. Tried and tested over 20 years, these include classics from all editions of the game.</p>
-				<h5>Your Notes</h5>
-				<form>
-				  <textarea class="u-full-width" id="exampleMessage" disabled>Matt's stuff is awesome and I can't wait to run this. </textarea>
-				</form>
-</div>				
+	  <div class="row" id="campaign">
 				
-	<div class="row">
-			<form>
-
-			<div class="two columns">
-				<label for="exampleRecipientInput">Sort by:</label>
-				<select class="u-full-width" id="exampleRecipientInput">
-			        <option value="Option 1" disabled>Rating</option>
-					<option value="Option 2" selected>Date</option>
-					<option value="Option 3" disabled>Saved</option>
-					<option value="Option 4" disabled>Random</option>
-					<option value="Option 3" disabled>Level</option>
-					
-	      		</select>
-			</div>
-			
-
-
-		</form>
-			
-			</div>
+				
+	
 			
 			
 			
