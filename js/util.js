@@ -10,8 +10,8 @@ var everything = {};
 for (i in soup){
 	everything[soup[i].id] = soup[i];
 }
-console.log("A good start:");
-console.log(everything);
+//console.log("A good start:");
+//console.log(everything);
 
 var ccollections = {
 	adventure: advarr,
@@ -141,12 +141,12 @@ function item_url(obj){
 
 function randomize(){
 	
-  console.log("Randomizing...");
+  //console.log("Randomizing...");
   //$("button").each(function(){$(this).removeClass("button-primary")});
   //$(this).addClass("button-primary");
 
   var rand = random_valid_id();
-  console.log(rand);
+  //console.log(rand);
   if (rand != "na") window.location = "item.html?id=" + rand + "&r=1";
 }
 
@@ -284,16 +284,16 @@ function soloplot(obj){
 
 
 function peopleby(adventure,imgwidth=50){
-		//console.log("hahahaha")
+		////console.log("hahahaha")
 		var allpeople = get_table_head(imgwidth);
 		var p = 0;
 	    for (x in people){
 	   	 
 	   	 if (adventure=="" || people[x].src == adventure){
-			 //console.log(plots[x]);	 
+			 ////console.log(plots[x]);	 
 			 allpeople += person_row(x);
 			 p += 1;
-			 //console.log(allplots);
+			 ////console.log(allplots);
  	
 	    }
 		
@@ -304,14 +304,14 @@ function peopleby(adventure,imgwidth=50){
 }
 
 function plotsby(adventure,imgwidth=50){
-		//console.log("hahahaha")
+		////console.log("hahahaha")
 		var p = 0;
 		var allplots = get_table_head(imgwidth);
 
 	    for (x in plots){
 	   	 
 	   	 if (adventure=="" || plots[x].src == adventure){
-			 //console.log(plots[x]);	 
+			 ////console.log(plots[x]);	 
 			 allplots += plot_row(x);
  			 p += 1;
 	    }
@@ -323,13 +323,13 @@ function plotsby(adventure,imgwidth=50){
 }
  
 function placesby(adventure,imgwidth=200){
-		//console.log("hahahaha")
+		////console.log("hahahaha")
 		var allplaces = get_table_head(imgwidth);
 		var p = 0;
 	    for (x in places){
 	   	 
 	   	 if (adventure=="" || places[x].src == adventure){
-			 //console.log(plots[x]);	 
+			 ////console.log(plots[x]);	 
 			 allplaces += place_row(x,imgwidth);
 			 p+= 1;
 	    }
@@ -345,22 +345,22 @@ function placesby(adventure,imgwidth=200){
 	for (q in soup){
 		var src = soup[q];
 		for (x in src) {
-		//console.log(src[x].type);
+		////console.log(src[x].type);
 		allitems += table_row(src[x].type, x,imgwidth);
 	}
 	}
 	allitems += get_table_tail();
-	//console.log(allitems);
+	////console.log(allitems);
 	return allitems;
 	
 }
 */
 function all_items(type="all",imgwidth=50,src="all"){
-	console.log(src);
+	////console.log(src);
 	var allitems = get_table_head(imgwidth);
 	var found = 0;
 	for (x in everything){
-		//console.log(src[x].type);
+		////console.log(src[x].type);
 		if ((type=="all") || (everything[x].type == type)) {
 			if ((src=="all") || (everything[x].src == src)){
 				found += 1;
@@ -368,7 +368,7 @@ function all_items(type="all",imgwidth=50,src="all"){
 		}
 	}
 	allitems += get_table_tail();
-	//console.log(allitems);
+	////console.log(allitems);
 	if (found == 0) return "";
 	return allitems;
 }
@@ -411,14 +411,14 @@ function show_collection(col,imgwidth="100"){
 	var found = 0;
 
 	for (x in col.contents){
-		//console.log(src[x].type);
-	//console.log(x);		
+		////console.log(src[x].type);
+	////console.log(x);		
 			found += 1;
 			allitems += table_row(everything[col.contents[x].id], imgwidth, col);
 		}
 	
 	allitems += get_table_tail();
-	//console.log(allitems);
+	////console.log(allitems);
 	if (found == 0) col_html += '<h5 class="center">Your archive is empty.</h5>';
 	else col_html += allitems;
 	
@@ -433,7 +433,7 @@ function show_collection(col,imgwidth="100"){
 function adventure_details(adv){
 	var adv = everything[adv];
 	if (adv.pages != "?") apages = adv.pages + ' pages'; else apages = "N/A";
-	console.log(apages);
+	//console.log(apages);
 	var oneadv = '<h1 class="center">'
 	+ adv.name
 	+ '</h1>'
@@ -521,11 +521,11 @@ function add_star_code(id,size=2){
 
 function update_star(id,obj){
 //	obj = obj.firstChild();
-	console.log("Update star");
+	//console.log("Update star");
 	var colls = inColl(id);
-	console.log(colls);
+	//console.log(colls);
 	var pid = "#" + id;
-	console.log(pid);
+	//console.log(pid);
 	var star_html = "";
 	obj.addClass("sel");
 	if (colls.length > 0){
@@ -546,16 +546,16 @@ function update_star(id,obj){
 }
 function return_solo(id){
 		// update star of this thing
-	console.log("Returning solo " + id);
+	//console.log("Returning solo " + id);
 	var q = "";
 	if (id == "x") {
 		q = '<h1 style="padding-top: 100px" class="center">¯\\_(ツ)_/¯</h1><p class="center">There doesn\'t seem to be anything here.<br/><a href="item.html">Try again</a> with the full collection.</p>';}
 	else {
 		item = everything[id];
-	//console.log(id);
-	//console.log(item);
+	////console.log(id);
+	////console.log(item);
 		
-		//console.log(q);
+		////console.log(q);
 		switch (item.type){
 		case "adventure":
 			q = soloadv(item);
@@ -671,7 +671,7 @@ function add_star_to_row(obj){
 }
 
 function plot_row(obj,imgwidth,col){
-	//console.log(obj.src);
+	////console.log(obj.src);
 	
 	var plot_html = '<tr>'
 			+ add_star_to_row(obj)
@@ -686,13 +686,13 @@ function plot_row(obj,imgwidth,col){
 	+ '</a></p></td>';
 	plot_html += notes_field(obj.id, col);
 	plot_html+='</tr>';
- //console.log(allplots);
+ ////console.log(allplots);
  
  return plot_html;
 }
 function person_row(obj, imgwidth,col){
 	//var obj = people[id];
-	//console.log(obj.tag);
+	////console.log(obj.tag);
 	var person_html = '<tr>'
 			+ add_star_to_row(obj)
 			+ '<td class="center"><a href="'
@@ -710,14 +710,14 @@ function person_row(obj, imgwidth,col){
 	+ '</a></p></td>';
 	person_html += notes_field(obj.id, col);
 	person_html +='</tr>';
-	//console.log(person_html);
+	////console.log(person_html);
 			 return person_html;
 }
 function place_row(obj,imgwidth=100,col){
-		//console.log("hahahaha")
+		////console.log("hahahaha")
 	//var obj = places[id];
-	//console.log(obj.image);
-	//console.log(notes);
+	////console.log(obj.image);
+	////console.log(notes);
 	var place_html = '<tr>'
 			+ add_star_to_row(obj)
 			+ '<td class="center"><a href="'
@@ -744,7 +744,7 @@ function place_row(obj,imgwidth=100,col){
 			 return place_html;
 }
 function adv_row(obj, imgwidth, col){
-	//console.log(adventure_url(obj));
+	////console.log(adventure_url(obj));
 			  var advhtml = '<tr>'
 	+ add_star_to_row(obj)
 	+'<td class="center"><a href="'
@@ -762,7 +762,7 @@ function adv_row(obj, imgwidth, col){
 			 +'</p></td>'
 			 advhtml += notes_field(obj.id, col);
 			 advhtml += '</tr>';
-			 //console.log(allplots);
+			 ////console.log(allplots);
 			 return advhtml;
 }
 
@@ -805,7 +805,7 @@ function indexOfSaved(id, arr){
 
 function getSavedCollection(coll="archive"){
 	var saved = JSON.parse(localStorage.saved);
-//	console.log(saved[coll].contents);
+//	//console.log(saved[coll].contents);
 	return saved[coll];
 }
 
@@ -820,8 +820,8 @@ function inColl(id) {
 			
 		}
 	}
-//	console.log("Collections");
-//	console.log(present);
+//	//console.log("Collections");
+//	//console.log(present);
 	return present;
 }
 
@@ -830,7 +830,7 @@ function is_saved(id){
 }
 
 function save(id, notes="", coll="archive",){
-	console.log("Saving..." + id);
+	//console.log("Saving..." + id);
 	var	saved = JSON.parse(localStorage.saved);
 	q = indexOfSaved(id, saved[coll].contents);
 	if (q == -1) {
@@ -844,16 +844,16 @@ function save(id, notes="", coll="archive",){
 	
 	}
 	localStorage.saved = JSON.stringify(saved);
-	console.log(localStorage.saved);
+	//console.log(localStorage.saved);
 	
 }
 
 function save_notes(notes, colname, index=""){
-	console.log(notes);
-	console.log(colname);
+	//console.log(notes);
+	//console.log(colname);
 	var	saved = JSON.parse(localStorage.saved);
 	if (index == "") {
-		//console.log(saved[colname]);
+		////console.log(saved[colname]);
 		saved[colname].notes = notes;
 		
 	} else {
@@ -871,7 +871,7 @@ function unsave(id, notes="", coll="archive"){
 	
 	
 	localStorage.saved = JSON.stringify(saved);
-	console.log(localStorage.saved);
+	//console.log(localStorage.saved);
 	
 }
 
@@ -883,7 +883,7 @@ $(document).ready(function(){
 	if (!localStorage.saved) {
 		saved = starchive;
 		localStorage.saved = JSON.stringify(saved);
-		//console.log(saved);
+		////console.log(saved);
 	}
 	
 /*	$(".allfilter").click(function(){
@@ -901,14 +901,14 @@ $(document).ready(function(){
 	$(".filter").click(function(){
 		var id = $(this).attr('id');
 		q = filters();
-		console.log(filters[id]);
+		//console.log(filters[id]);
 		if (q[id] == "0"){
 			q[id] = 1;
 		} else {
 			q[id] = 0;
 		}
 		localStorage.filterdata = JSON.stringify(q);
-		console.log(q);
+		//console.log(q);
 		update_buttons();
 	});
 	
@@ -922,19 +922,19 @@ $(document).ready(function(){
 			q = 0;
 		}
 		localStorage.newonly = q;
-		console.log(q);
+		//console.log(q);
 		update_buttons();
 	});
 	
 	
 	$('body').on("click",'.notesave',function(){
-		//console.log($(this));
+		////console.log($(this));
 		//var chevron = $(this);
 		var col = $(this).attr('id').split('-')[1];
 		var item = $(this).attr('id').split('-')[2];
 		var q = "#colNotes-" + col;
 		if (item) q += '-' + item;
-		console.log(q);
+		//console.log(q);
 		var notes = $(q).val();
 		save_notes(notes, col, item);
 	});
@@ -942,9 +942,9 @@ $(document).ready(function(){
 	
 	
 	$('body').on("click",'.expand',function(){
-		//console.log($(this));
+		////console.log($(this));
 		var chevron = $(this);
-		//console.log(chevron);
+		////console.log(chevron);
 	
 		if (chevron.hasClass("fa-chevron-down")){
 				chevron.removeClass("fa-chevron-down");
@@ -958,7 +958,7 @@ $(document).ready(function(){
 	
 	
 	  var eid = $(this).attr("id").substring(1);
-	  //console.log(eid);			  
+	  ////console.log(eid);			  
 	    $('#content'+eid).slideToggle('slow');
 	});
 });

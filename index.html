@@ -31,14 +31,14 @@
 	$(document).ready(function(){
   	$("#nuke").click(function(){
 		var r = confirm("This will permanently erase all your data!");
-		console.log(localStorage);
+		//console.log(localStorage);
 		if (r == true) {
 		    localStorage.clear();
-			console.log("Local storage reset");
+			//console.log("Local storage reset");
 		} else {
-		    console.log("Crisis averted");
+		    //console.log("Crisis averted");
 		}
-		console.log(localStorage);  		
+		//console.log(localStorage);  		
   	});
 	  	});
 	  </script>
