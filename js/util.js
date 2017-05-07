@@ -876,7 +876,7 @@ function is_saved(id){
 	return (inColl(id).length > 0);
 }
 
-function save(id, notes="", coll="archive",){
+function save(id, notes="", coll="archive"){
 	//console.log("Saving..." + id);
 	var	saved = JSON.parse(localStorage.saved);
 	q = indexOfSaved(id, saved[coll].contents);
