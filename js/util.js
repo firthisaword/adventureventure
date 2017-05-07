@@ -156,14 +156,8 @@ function item_url(obj){
 	return "item.html?id=" + obj.id;
 }
 
-function randomize(savedokay=true){
-	
-  //console.log("Randomizing...");
-  //$("button").each(function(){$(this).removeClass("button-primary")});
-  //$(this).addClass("button-primary");
-
+function randomize(savedokay = true){	
   var rand = random_valid_id(savedokay);
-  //console.log(rand);
   if (rand != "na") return rand;
   return "x";
 }
