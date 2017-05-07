@@ -54,6 +54,9 @@
 		$("#save").click(function() {
 			$('.star').trigger("click");
 		});
+		$("#ar").click(function() {
+			window.location.replace("savedcol.html?id=archive");
+		});
 	 ////console.log(qs);
 	 
 	 //var type = qs["type"];
@@ -112,8 +115,8 @@
 	  <h1 class=''>Adventure Venture</h1>
 	  <p class="center">A random something from the archives:</p>
 	  <div class="crandom"><button class="constant" id="save"><strong>(s)</strong> Save item</button>
-		  					<button class="constant"><strong>(s)</strong>See s</button>
-							<button class="constant" id="random"><strong>(x)</strong> Spin again!</button></div>
+		  					<button class="constant" id="ar"><i class="fa fa-lg fa-star-o"></i> See saved</button>
+							<button class="constant button-primary" id="random"><strong>(x)</strong> Spin again!</button></div>
 	  
 	  </div>
 		  <div class="boxpad2">

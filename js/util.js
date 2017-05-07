@@ -259,7 +259,7 @@ function soloperson(obj){
 	
 	var tag="";
 	if (obj.tag) tag = obj.tag;
-	console.log(item_url(obj));
+	//console.log(item_url(obj));
 	soloper = '<h3 class="center">&mdash; <a title="Direct link" href="'
 	+ item_url(obj)
 	+'" target=_blank><i class="fa fa-user fa-lg"></i></a> &mdash;</h3><p class="center"><strong>'
