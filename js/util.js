@@ -58,6 +58,8 @@ function one(obj){
 	}
 	
 }
+
+
 function shuffle(a) {
     var j, x, i;
     for (i = a.length; i; i--) {
@@ -87,7 +89,7 @@ function update_buttons(){
 }
 
 function filters() {
-	if (localStorage.filterdata) { filtero = JSON.parse(localStorage.filterdata);
+	if (sessionStorage.filterdata) { filtero = JSON.parse(sessionStorage.filterdata);
 	} else {
 		filtero = {
 			a: 1,
@@ -95,7 +97,7 @@ function filters() {
 			c: 1,
 			m: 1
 		};
-		localStorage.filterdata = JSON.stringify(filtero);
+		sessionStorage.filterdata = JSON.stringify(filtero);
 	};
 	
 	if (!localStorage.newonly) localStorage.newonly=0;
@@ -147,7 +149,8 @@ function randomize(){
 
   var rand = random_valid_id();
   //console.log(rand);
-  if (rand != "na") window.location = "item.html?id=" + rand + "&r=1";
+  if (rand != "na") return rand;
+  return "x";
 }
 
 function random_valid_id(){
@@ -390,7 +393,7 @@ function list_collections(){
 			+ currcol.notes
 			+ '</p><a class="button" href="savedcol.html?id=' 
 			+ currcol.id 
-			+ '" target=_blank>Details</a>';
+			+ '">Details</a>';
 	}
 	return h;
 }
@@ -419,7 +422,7 @@ function show_collection(col,imgwidth="100"){
 	
 	allitems += get_table_tail();
 	////console.log(allitems);
-	if (found == 0) col_html += '<h5 class="center">Your archive is empty.</h5>';
+	if (found == 0) col_html += '<div class="center"><h5 class="center">Your archive is empty.</h5><a class="button button-primary" href="index.html">Random item</a><br/><a class="button button-primary" href="collections.html">Collections</a></div>';
 	else col_html += allitems;
 	
 	return col_html;
@@ -549,7 +552,7 @@ function return_solo(id){
 	//console.log("Returning solo " + id);
 	var q = "";
 	if (id == "x") {
-		q = '<h1 style="padding-top: 100px" class="center">¯\\_(ツ)_/¯</h1><p class="center">There doesn\'t seem to be anything here.<br/><a href="item.html">Try again</a> with the full collection.</p>';}
+		q = '<h1 style="padding-top: 100px" class="center">¯\\_(ツ)_/¯</h1><p class="center">There doesn\'t seem to be anything here.<br/><a class="button button-primary" href="index.html">Try again</a></p>';}
 	else {
 		item = everything[id];
 	////console.log(id);
@@ -893,7 +896,7 @@ $(document).ready(function(){
 		} else {
 			one(q);
 		}
-		localStorage.filterdata = JSON.stringify(q);
+		sessionStorage.filterdata = JSON.stringify(q);
 		update_buttons();
 	});
 	*/
@@ -907,7 +910,7 @@ $(document).ready(function(){
 		} else {
 			q[id] = 0;
 		}
-		localStorage.filterdata = JSON.stringify(q);
+		sessionStorage.filterdata = JSON.stringify(q);
 		//console.log(q);
 		update_buttons();
 	});
@@ -938,7 +941,6 @@ $(document).ready(function(){
 		var notes = $(q).val();
 		save_notes(notes, col, item);
 	});
-	
 	
 	
 	$('body').on("click",'.expand',function(){

@@ -27,8 +27,12 @@
   <link rel="icon" type="image/png" href="images/favicon-shield.ico">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/stars.js"></script>
   <script>
 	$(document).ready(function(){
+ 		$("#header").html(header());
+ 		$("#about").addClass("button-primary");
+		
 	  	});
 	  </script>
 </head>
@@ -38,10 +42,10 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
 	
-
+	  <div id="header" class="row center" style="padding-top:10px"></div>
 
 	  <div class="row">
-		  <h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; About</h5>
+
 		  <h1 class='center' style="padding-top:40px">About Adventure Venture</h1>
 <!---		  <p style="margin:auto auto 20px auto; width:60%">Let's face it, fellow Dungeon Master: you're never going to run <em>Queen of the Spiders</em> as written. It's nine editions stale, and you'd want to customize it for your world anyway. Plus, most pre-written adventures are boring and can't hold a candle to your own imagination. You read them mostly for inspiration.</p>
 			  

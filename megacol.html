@@ -45,7 +45,7 @@
 	 $(document).ready(function(){
 	 //shuffle(plots);
 		 //adventures.sort(srt(null,'source'));
-		 
+		
 		 switch (col) {
 		 case "all":
 		 
@@ -65,21 +65,27 @@
 			 items = all_items("plot",100);
 			 $("#title").html("All Plot Hooks");
 			 document.title = 'Plot Hooks';
+			 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; <a href="collections.html">Collections</a> &mdash; Plot Hooks</h5>');
 			 break;
 		 case "people":
 			 items = all_items("person",100);
 			 $("#title").html("All NPCs, Villains, and Patrons");
 			 document.title = 'People';
+			 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; <a href="collections.html">Collections</a> &mdash; People</h5>');
 			 break;
 		 case "places":
 			 items = all_items("place",200);
 			 $("#title").html("All Places &amp; Encounters");
 			 document.title = 'Places';
+			 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; <a href="collections.html">Collections</a> &mdash; Places</h5>');
+			 
 			 break;
 		 }
 		 display_adventures();
 	
 
+   		$("#header").html(header());
+   		$("#coll").addClass("button-primary");
 
 
 		$("#random").click(function() {
@@ -113,13 +119,8 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
-	  <div class="row">
-			  
-			  	<p class="right">You are logged in as <a href="savedcol.html?id=archive">TheBestDM</a></p>
-				<div id="header"></div>
-				
-				
-		</div>
+	
+			  <div id="header" class="row center" style="padding-top:10px"></div>
 	
 
 				<h1 id="title" class="center"></h1>

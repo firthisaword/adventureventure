@@ -27,40 +27,119 @@
   <link rel="icon" type="image/png" href="images/favicon-shield.ico">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/collections.js"></script>
+  <script src="js/adventures.js"></script>
+  <script src="js/plots.js"></script>
+  <script src="js/places.js"></script>
+  <script src="js/people.js"></script>
+  <script src="js/util.js"></script>
   <script>
 	$(document).ready(function(){
-  	$("#nuke").click(function(){
-		var r = confirm("This will permanently erase all your data!");
-		//console.log(localStorage);
-		if (r == true) {
-		    localStorage.clear();
-			//console.log("Local storage reset");
-		} else {
-		    //console.log("Crisis averted");
-		}
-		//console.log(localStorage);  		
-  	});
+		$("#header").html(header());
+		$("#index").addClass("button-primary");
+	 
+	 update_buttons();
+
+
+		$("#random").click(function() {
+		 id = randomize();
+		 localStorage.lastid = id;
+		 $('#details').html(return_solo(id));
+		});
+		$("#save").click(function() {
+		$('.star').trigger("click");
+		});
+	 ////console.log(qs);
+	 
+	 //var type = qs["type"];
+	 //var id = qs["id"];
+	 //var random = qs["r"];
+	 var id = randomize();
+	 localStorage.lastid = id;
+		 $("#randombox").show();
+//		 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; Random Object</h5>');
+		 $(document).keydown(function(e) {
+		     switch(e.which) {
+		         case 88: // x
+					 id = randomize();
+					 localStorage.lastid = id;
+					 $('#details').html(return_solo(id));
+		         break;
+
+		         case 83: // s
+					 //save
+					 $('.star').trigger("click");
+					 
+		         break;
+
+		         default: return; // exit this handler for other keys
+		     }
+		     e.preventDefault(); // prevent the default action (scroll / move caret)
+		 });
+	 
+
+	 $('#details').html(return_solo(id));
+	 $('#padder').height($("#footer").height());
+	// console.log($("#padder").height()+200);
 	  	});
 	  </script>
+		</script>
+			 <script src="js/stars.js"></script>
 </head>
 <body>
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-	  <div class="row">
-			  
-			  	<p class="right">You are logged in as <a href="savedcol.html?id=archive">TheBestDM</a></p>
-		</div>
+  
 	
 
 
-	  <div class="row">
-		  <h1 class='center'>Adventure Venture</h1>
+	 
+		  
+		  
+		  
+		  
+		    <div class="container center">
+		  	  <div id="header" class="row center" style="padding-top:10px"></div>
+				
+		  	  
+			  
+  <div class="row">
+	  <h1 class=''>Adventure Venture</h1>
+	  <p class="center">A random something from the archives:</p>
+	  <div class="crandom"><button class="constant" id="save"><strong>(s)</strong> Save item</button><button class="constant button-primary" id="random"><strong>(x)</strong> Spin again!</button></div>
+	  
+	  </div>
+		  <div class="boxpad2">
+		  <div class="boxpad">
+			  <div class="box" id="details"></div>
+		  </div></div>
+
+		
+
+		  <div id="padder">Invisible</div>
+		  
+		  <div class="hidden" id="randombox">
+		  	  
+			  <div class="row" id="navbut">
+				
+		  			</div>
+
+		  			<div class="center" id="footer">
+						<p class="center">Filters:
+		  				<button class="constant filter button-primary" id="a"><i class="fa fa-lg fa-book"></i> Adventures</button>
+		  				<button class="constant filter button-primary" id="p"><i class="fa fa-lg fa-bookmark"></i> Plot hooks</button>
+		  				<button class="constant filter button-primary" id="c"><i class="fa fa-lg fa-user"></i> People</button>
+		  				<button class="constant filter button-primary" id="m"><i class="fa fa-lg fa-map"></i> Places</button>
+</p>
+		  				
+		  </div>
+		  </div>
+		  
 <!---		  <p style="margin:auto auto 20px auto; width:60%">Let's face it, fellow Dungeon Master: you're never going to run <em>Queen of the Spiders</em> as written. It's nine editions stale, and you'd want to customize it for your world anyway. Plus, most pre-written adventures are boring and can't hold a candle to your own imagination. You read them mostly for inspiration.</p>
 			  
 			  <p style="margin:auto auto 20px auto; width:60%">Adventure Venture is a new type of archive for existing adventures that lets you:</p>
-		  --><p style="margin:auto; width:60%; padding-bottom:20px;">Adventure Venture is a proof-of-concept prototype for a repository of existing roleplaying game adventures. It was created in response to <a href="about.html" target=_blank>user experience research</a> with game masters on Reddit. It is interesting in the following ways:</p>
+		  <p style="margin:auto; width:60%; padding-bottom:20px;">Adventure Venture is a proof-of-concept prototype for a repository of existing roleplaying game adventures. It was created in response to <a href="about.html" target=_blank>user experience research</a> with game masters on Reddit. It is interesting in the following ways:</p>
 		  			<table class="u-half-width" style="margin:auto; width:60%">
 		  				
 		  			  <thead>

@@ -26,7 +26,7 @@
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	  
-  <link rel="icon" type="image/png" href="images/favicon-shield.ico">
+  <link id='ico' rel="icon" type="image/png" href="images/favicon-shield.ico">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/collections.js"></script>
@@ -40,7 +40,7 @@
 // Change this for whichever adventure is around
 	
 	
-	var qs = (function(a) {
+/*	var qs = (function(a) {
 	    if (a == "") return {};
 	    var b = {};
 	    for (var i = 0; i < a.length; ++i)
@@ -55,64 +55,48 @@
 	})(window.location.search.substr(1).split('&'));
 	
 	//var adventure = "bog";
-
+*/
  
 
 	 $(document).ready(function(){
 		 //localStorage.lasttype = qs["type"];
-		 localStorage.lastid = qs["id"];
-		 update_buttons();
- 		$("#random").click(function() {
-			randomize();
- 		});
- 		$("#save").click(function() {
-			$('.star').trigger("click");
- 		});
+ 		$("#header").html(header());
+ 		$("#coll").addClass("button-primary");
+		 //localStorage.lastid = qs["id"];
+		 //update_buttons();
+ 		
 		 ////console.log(qs);
 		 
 		 //var type = qs["type"];
 		 var id = qs["id"];
-		 var random = qs["r"];
-		 if (!id) randomize();
-		 if (random == 1) {
-			 $("#randombox").show();
-			 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; Random Item</h5>');
-			 $(document).keydown(function(e) {
-			     switch(e.which) {
-			         case 88: // x
-						 randomize();
-			         break;
-
-			         case 83: // s
-						 //save
-						 $('.star').trigger("click");
-						 
-			         break;
-
-			         default: return; // exit this handler for other keys
-			     }
-			     e.preventDefault(); // prevent the default action (scroll / move caret)
-			 });
-		 } else {
-		 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; Single Item</h5>');
-		 document.title = "Single Item";
-		 }
-/*		 
-		 var nexts = next(adventure);
-		 //console.log(nexts);
-		 
-		 var prevs = prev(adventure);
-		 //console.log(prevs);
-		 if (prevs) {
-		 	$('#navbut').append('<a class="button" href="adventure.html?adv='+prevs.src+'">Previous</a>')
-		 }
-		 if (nexts) {
-		 	$('#navbut').append('<a class="a-right button" href="adventure.html?adv='+nexts.src+'">Next</a>')
-		 }
-*/
-		 
+		// var random = qs["r"];
+		var item = everything[id];
+		switch (item.type) {
+		
+			case "adventure":
+				document.title = item.name;
+				$("#ico").attr('href',"images/favicon-book.ico");
+				break;
+			case "place":
+				document.title = item.name;
+				$("#ico").attr('href',"images/favicon-map.ico");
+				break;
+			case "plot":
+				document.title = "Plot Hook";
+				$("#ico").attr('href',"images/favicon-bookmark.ico");
+				break;
+			case "person":
+				document.title = item.name;
+				$("#ico").attr('href',"images/favicon-user.ico");
+				break;
+			default:
+				return null;
+				break;
+			}
+		
 		 
 		 $('#details').html(return_solo(id));
+		 
 		 //update_star(type,id,$('#'+type+'.'+id));
 
 	
@@ -131,11 +115,8 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
-	  <div class="row">
 			  
-			  	<p class="right">You are logged in as <a href="savedcol.html?id=archive">TheBestDM</a></p>
-				<div id="header"></div>
-		</div>
+				<div id="header" class="row center" style="padding-top:10px"></div>
 	
 <div class="hidden" id="randombox">
 	  <div class="row" id="navbut">

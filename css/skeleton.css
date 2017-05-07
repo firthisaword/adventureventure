@@ -173,7 +173,7 @@ input[type="reset"],
 input[type="button"] {
   display: inline-block;
   height: 38px;
-  padding: 0 30px;
+  padding: 0 10px;
   color: #555;
   text-align: center;
   font-size: 11px;
@@ -496,7 +496,7 @@ display:none;
 	margin-right:auto;
 }
 .constant {
-	width: 160px;
+	width: 120px;
 }
 .square {
 	width: 80px;
@@ -524,4 +524,51 @@ html {
    width:100%;
    background:#fff;
    border-top: 1px solid #999;
+}
+
+#padder {
+	color: white;
+	padding: 20px;
+}
+
+.crandom {
+	padding-bottom:10px;
+	
+}
+.box {
+	padding: 40px;
+	border: 1px solid #999;;
+	border-radius: 20px 5px;
+	margin-left: auto;
+	margin-right: auto;
+	width:300px;
+	
+}
+
+#nuke {
+	color: #aaa;
+}
+.boxpad {
+	margin-left: auto;
+	margin-right: auto;
+	width:376px;
+	border-color: #999;
+	border-width: 1px;
+	padding-left: 0px;
+	padding-right: 9px;
+	padding-bottom: 2px;
+	border-style: none solid solid none;
+	border-radius: 20px 5px;	
+}
+.boxpad2 {
+	margin-left: auto;
+	margin-right: auto;
+	width:376px;
+	border-color: #999;
+	border-width: 1px;
+	padding-left: 0px;
+	padding-right: 13px;
+	padding-bottom: 2px;
+	border-style: none solid solid none;
+	border-radius: 20px 5px;	
 }

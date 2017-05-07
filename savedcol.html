@@ -37,16 +37,23 @@
 // Change this for whichever adventure is around
 	var imgwidth = 100;
 	
-	 var col = qs["id"];
+	 var curcol = qs["id"];
 
 	
 
 	function display_collection(){
-		$('#everything').html(show_collection(getSavedCollection(col)));
+		$('#everything').html(show_collection(getSavedCollection(curcol)));
 	}
 	
 	 $(document).ready(function(){
 		 display_collection();
+    	$("#header").html(header());
+		//console.log(curcol);
+		 if (curcol=="archive"){
+		 	$("#archive").addClass("button-primary");
+		 } else {
+		 	$("#coll").addClass("button-primary");
+		 }
 		 
 
 	});
@@ -76,11 +83,9 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
-	  <div class="row">
+	 
 			  
-			  	<p class="right">You are logged in as <a href="savedcol.html?id=archive">TheBestDM</a></p>
-				<h5><a href="index.html">Home</a> &mdash; <a href="collections.html">Collections</a></h5>
-		</div>
+			  	 <div id="header" class="row center" style="padding-top:10px"></div>
 	
 
 				<div class="row" id="everything">
