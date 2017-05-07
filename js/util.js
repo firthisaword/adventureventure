@@ -937,6 +937,7 @@ $(document).ready(function(){
 //		sessionStorage.removeItem('filterdata');
 
 	if (!localStorage.saved) {
+		console.log(starchive);
 		saved = starchive;
 		localStorage.saved = JSON.stringify(saved);
 		////console.log(saved);
