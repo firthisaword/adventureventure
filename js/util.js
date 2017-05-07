@@ -318,8 +318,8 @@ function soloplot(obj){
 
 
 
-
-function peopleby(adventure,imgwidth=50){
+/*
+function peopleby(adventure,imgwidth){
 		////console.log("hahahaha")
 		var allpeople = get_table_head(imgwidth);
 		var p = 0;
@@ -376,7 +376,7 @@ function placesby(adventure,imgwidth=200){
 	else return "";
 }
  
-/*function absolutely_all_items(imgwidth=200){
+function absolutely_all_items(imgwidth=200){
 	var allitems = get_table_head(imgwidth);
 	for (q in soup){
 		var src = soup[q];
@@ -391,7 +391,10 @@ function placesby(adventure,imgwidth=200){
 	
 }
 */
-function all_items(type="all",imgwidth=50,src="all"){
+function all_items(type,imgwidth,src){
+	if (!type) type = "all";
+	if (!imgwidth) imgwidth = 50;
+	if (!src) src = "all";
 	////console.log(src);
 	var allitems = get_table_head(imgwidth);
 	var found = 0;
@@ -431,8 +434,9 @@ function list_collections(){
 	return h;
 }
 
-function show_collection(col,imgwidth="100"){
+function show_collection(col,imgwidth){
 	//get the full collection and build html from there
+	if (!imgwidth) imgwidth = 100;
 	var col_html = "<h1>"
 	+ col.name
 	+ '</h1>';
@@ -523,7 +527,7 @@ function lookup(type, id){
 }
 
 
-function add_star_code(id,size=2){
+function add_star_code(id){
 	var g;
 	var colls = inColl(id);
 	//var pid = type + "." + id;
@@ -629,9 +633,10 @@ return q;
 
 
 
-function table_row(item,imgwidth=100,col=null){
+function table_row(item,imgwidth,col){
 	output = "";
-
+	if (!imgwidth) imgwidth = 100;
+	if (!col) col = null;
 		switch (item.type){
 		case "adventure":
 			output = adv_row(item,imgwidth, col);
@@ -654,7 +659,7 @@ function table_row(item,imgwidth=100,col=null){
 }
 
 
-function get_table_head(imgwidth=100){
+function get_table_head(imgwidth){
 	return '<table class="u-full-width"><col width="5px"><col width="'
 	+imgwidth
 	+'px"><col><col width="200px"><thead></thead><tbody>';
@@ -757,7 +762,7 @@ function person_row(obj, imgwidth,col){
 	////console.log(person_html);
 			 return person_html;
 }
-function place_row(obj,imgwidth=100,col){
+function place_row(obj,imgwidth,col){
 		////console.log("hahahaha")
 	//var obj = places[id];
 	////console.log(obj.image);
@@ -847,7 +852,8 @@ function indexOfSaved(id, arr){
 }
 
 
-function getSavedCollection(coll="archive"){
+function getSavedCollection(coll){
+	if (!coll) coll = "archive";
 	var saved = JSON.parse(localStorage.saved);
 //	//console.log(saved[coll].contents);
 	return saved[coll];
@@ -873,8 +879,10 @@ function is_saved(id){
 	return (inColl(id).length > 0);
 }
 
-function save(id, notes="", coll="archive"){
+function save(id, notes, coll){
 	//console.log("Saving..." + id);
+	if (!notes) notes = "";
+	if (!coll) coll = "archive";
 	var	saved = JSON.parse(localStorage.saved);
 	q = indexOfSaved(id, saved[coll].contents);
 	if (q == -1) {
@@ -892,11 +900,12 @@ function save(id, notes="", coll="archive"){
 	
 }
 
-function save_notes(notes, colname, index=""){
+function save_notes(notes, colname, index){
 	//console.log(notes);
 	//console.log(colname);
+	
 	var	saved = JSON.parse(localStorage.saved);
-	if (index == "") {
+	if (!index) {
 		////console.log(saved[colname]);
 		saved[colname].notes = notes;
 		
@@ -906,7 +915,8 @@ function save_notes(notes, colname, index=""){
 	localStorage.saved = JSON.stringify(saved);
 }
 
-function unsave(id, notes="", coll="archive"){
+function unsave(id, coll){
+	if (!coll) coll = "archive";
 	var	saved = JSON.parse(localStorage.saved);
 	q = indexOfSaved(id, saved[coll].contents);
 	if (q != -1) {
