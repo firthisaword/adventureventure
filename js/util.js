@@ -156,7 +156,10 @@ function item_url(obj){
 	return "item.html?id=" + obj.id;
 }
 
-function randomize(savedokay = true){	
+function randomize(savedokay){	
+	if (!savedokay){
+		savedokay = true;
+	}
   var rand = random_valid_id(savedokay);
   if (rand != "na") return rand;
   return "x";
