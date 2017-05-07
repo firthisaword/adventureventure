@@ -73,8 +73,11 @@ function shuffle(a) {
 function check_filters(){
 	if (!sum(filters())) 
 		sessionStorage.removeItem('filterdata');
+	if (!JSON.parse(sessionStorage.savedokay))
+		sessionStorage.savedokay = 1;
 	
 }
+
 function update_buttons(){
 	
 	f = filters();
@@ -92,11 +95,15 @@ function update_buttons(){
 		$(".allfilter").removeClass("button-primary");
 	}
 	
-	
+	if (!JSON.parse(sessionStorage.savedokay))
+		$(".sfilter").addClass("button-primary");
+	else 
+		$(".sfilter").removeClass("button-primary");
 	
 }
 
 function filters() {
+	var filtero;
 	if (sessionStorage.filterdata) { filtero = JSON.parse(sessionStorage.filterdata);
 	} else {
 		filtero = {
@@ -108,7 +115,7 @@ function filters() {
 		sessionStorage.filterdata = JSON.stringify(filtero);
 	};
 	
-	if (!localStorage.newonly) localStorage.newonly=0;
+	if (!sessionStorage.savedokay) sessionStorage.savedokay = JSON.stringify(1);
 	return filtero;
 }
 
@@ -149,45 +156,66 @@ function item_url(obj){
 	return "item.html?id=" + obj.id;
 }
 
-function randomize(){
+function randomize(savedokay=true){
 	
   //console.log("Randomizing...");
   //$("button").each(function(){$(this).removeClass("button-primary")});
   //$(this).addClass("button-primary");
 
-  var rand = random_valid_id();
+  var rand = random_valid_id(savedokay);
   //console.log(rand);
   if (rand != "na") return rand;
   return "x";
 }
 
-function random_valid_id(){
+function viable_items(type,savedokay){
+	var q = [];
+	for (e in everything) {
+		
+		if (e.startsWith(type)) {
+			if (savedokay || !is_saved(e)) {
+				//console.log(e);
+				q.push(e);
+			}
+		}
+	}
+	//console.log(q);
+	return q;
+}
+
+function random_valid_id(savedokay){
 	
 //	 var oldtype = localStorage.lasttype;
 	 var oldid = localStorage.lastid;
 	
-	var id = "na";
+	//var id = "na";
 	//var id = -1;
 	var f = filters();
+	//console.log(f);
 	// var newonly = localStorage.newonly;
 	if (sum(f)){
-		var viable_types = [];
+		//var viable_types = [];
+		var all_viable_options = [];
 		for (z in f){
-			if (f[z]=='1') viable_types.push(z);
+			if (f[z]==1) {
+				var q = viable_items(z,savedokay);
+				all_viable_options = all_viable_options.concat(q);
+			}
 		}
 
-
-		var new_id;
-		var new_item;
-		var full_id;
-		do {
-			new_id = Object.keys(everything)[Math.floor(Math.random()*Object.keys(everything).length)];
-			// if the type is forbidden
-			new_item = everything[new_id];
-			full_id = new_item.id;
-			
-		} while ((viable_types.indexOf(full_id.split(".")[0]) == -1) || (full_id == oldid ));
-		return full_id;
+		if (all_viable_options.length == 0) return "x";
+		
+		var oldindex = all_viable_options.indexOf(oldid);
+		if (oldindex != -1){
+			all_viable_options.splice(oldindex, 1);
+		}
+		//console.log(all_viable_options);		
+		if (all_viable_options.length == 0) return "x";
+		
+		index = Math.floor(Math.random() * all_viable_options.length);
+		return all_viable_options[index];
+		
+		
 	}
 	else {
 		return "x";
@@ -280,7 +308,7 @@ function soloplot(obj){
 	//obj = plots[id];
 	var oneplot = '<h3 class="center">&mdash; <a href="'
 	+ item_url(obj)
-	+'" target=_blank"><i class="fa fa-bookmark fa-lg"></i></a> &mdash;</h3><p class="center"><strong>Plot hook</strong></p><h5 style="margin: 50px 0px 20px 0px; text-align:left;">'
+	+'" target=_blank"><i class="fa fa-bookmark fa-lg"></i></a> &mdash;</h3><p class="center"><strong>Plot hook</strong></p><h5 style="margin: 40px 0px 20px 0px; text-align:left;">'
 	+ obj.text
 	+'</h5><p style="padding-top:20px" class="center">Adventure:<br/><a target=_blank href="'
 	+ adventure_url(obj)
@@ -897,7 +925,7 @@ function unsave(id, notes="", coll="archive"){
 
 
 $(document).ready(function(){
-	check_filters();
+	//check_filters();
 //	if (!sum(filters())) 
 //		sessionStorage.removeItem('filterdata');
 
@@ -935,15 +963,14 @@ $(document).ready(function(){
 	
 	
 	$(".sfilter").click(function(){
-		
-		q = localStorage.newonly;
-		if (q == "0"){
-			q = 1;
-		} else {
+		console.log("Clicking");
+		q = JSON.parse(sessionStorage.savedokay);
+		if (q == 1){
 			q = 0;
+		} else {
+			q = 1;
 		}
-		localStorage.newonly = q;
-		//console.log(q);
+		sessionStorage.savedokay = q;
 		update_buttons();
 	});
 	

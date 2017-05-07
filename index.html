@@ -35,20 +35,22 @@
   <script src="js/util.js"></script>
   <script>
 	$(document).ready(function(){
+		check_filters();
 		$("#header").html(header());
 		$("#index").addClass("button-primary");
-	 
-
+		filters();
+		var so = JSON.parse(sessionStorage.savedokay);
 
 
 		$("#random").click(function() {
 			//console.log("randomizing");
 				filters();
-			 id = randomize();
+				so = JSON.parse(sessionStorage.savedokay);
+			 id = randomize(so);
 			 localStorage.lastid = id;
 			 $('#details').html(return_solo(id));
 			 update_buttons();
-			 check_filters();
+			 //check_filters();
 			 
 		});
 		$("#save").click(function() {
@@ -62,7 +64,8 @@
 	 //var type = qs["type"];
 	 //var id = qs["id"];
 	 //var random = qs["r"];
-	 var id = randomize();
+		so = JSON.parse(sessionStorage.savedokay);
+	 var id = randomize(so);
 	 localStorage.lastid = id;
 	 	 	update_buttons();
 		// $("#randombox").show();
@@ -115,7 +118,7 @@
 	  <h1 class=''>Adventure Venture</h1>
 	  <p class="center">A random something from the archives:</p>
 	  <div class="crandom"><button class="constant" id="save"><strong>(s)</strong> Save item</button>
-		  					<button class="constant" id="ar"><i class="fa fa-lg fa-star-o"></i> See saved</button>
+		  					<button class="constant" id="ar">See archive</button>
 							<button class="constant button-primary" id="random"><strong>(x)</strong> Spin again!</button></div>
 	  
 	  </div>
@@ -140,6 +143,7 @@
 		  				<button class="constant filter button-primary" id="p"><i class="fa fa-lg fa-bookmark"></i> Plot hooks</button>
 		  				<button class="constant filter button-primary" id="c"><i class="fa fa-lg fa-user"></i> People</button>
 		  				<button class="constant filter button-primary" id="m"><i class="fa fa-lg fa-map"></i> Places</button>
+						<button class="constant sfilter button-primary"><i class="fa fa-lg fa-star-o"></i> Skip saved</button>
 </p>
 		  				
 		  </div>

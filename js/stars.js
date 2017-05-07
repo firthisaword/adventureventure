@@ -33,6 +33,8 @@ $(document).ready(function(){
 		//console.log(localStorage);
 		if (r == true) {
 		    localStorage.clear();
+			sessionStorage.clear();
+			location.reload();
 			//console.log("Local storage reset");
 		} else {
 		    //console.log("Crisis averted");
