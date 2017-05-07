@@ -45,7 +45,7 @@ var freya =
 		synopsis: "Player characters begin by arriving at the eponymous keep, and can base themselves there before investigating the series of caverns in the nearby hills teeming with monsters. These Caves of Chaos house multiple species of vicious humanoids. Plot twists include a treacherous priest within the keep, hungry lizardmen in a nearby swamp, and a mad hermit in the wilderness. It typifies the dungeon crawls associated with beginning D&D players, while permitting some limited outdoor adventures.",
 		image: "border.jpg",
 		type: "adventure",
-		id: "a.2",
+		src: "a.2",
 		
 	};
 var dbd = 
