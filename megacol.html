@@ -24,7 +24,7 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" id="ico" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/collections.js"></script>
@@ -52,6 +52,7 @@
 			 items = all_items();
 			 $("#title").html("Everything");
 			 document.title = 'Everything';
+			 $("#ico").attr('href',"images/favicon-bathtub.ico");
 			 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; <a href="collections.html">Collections</a> &mdash; Everything</h5>');
 			 
 			 break;
@@ -59,24 +60,28 @@
 			 items = all_items("adventure",100);
 			 $("#title").html("All Adventures");
 			 document.title = 'Adventures';
+			 $("#ico").attr('href',"images/favicon-book.ico");
 			 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; <a href="collections.html">Collections</a> &mdash; Adventures</h5>');
 			 break;
 		 case "plots":
 			 items = all_items("plot",100);
 			 $("#title").html("All Plot Hooks");
 			 document.title = 'Plot Hooks';
+			 $("#ico").attr('href',"images/favicon-bookmark.ico");
 			 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; <a href="collections.html">Collections</a> &mdash; Plot Hooks</h5>');
 			 break;
 		 case "people":
 			 items = all_items("person",100);
 			 $("#title").html("All NPCs, Villains, and Patrons");
 			 document.title = 'People';
+			 $("#ico").attr('href',"images/favicon-user.ico");
 			 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; <a href="collections.html">Collections</a> &mdash; People</h5>');
 			 break;
 		 case "places":
 			 items = all_items("place",200);
 			 $("#title").html("All Places &amp; Encounters");
 			 document.title = 'Places';
+			 $("#ico").attr('href',"images/favicon-map.ico");
 			 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; <a href="collections.html">Collections</a> &mdash; Places</h5>');
 			 
 			 break;

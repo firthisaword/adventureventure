@@ -534,14 +534,14 @@ function add_star_code(id,size=2){
 		//thing exists, set star to on
 		g = '<div class="center">';
 		g += '<a class="star sel" id="' + id + '"><i class="fa fa-star fa-2x" title="Unsave"></i></a></div>'	 
-		$("#save").html("<strong>(s)</strong> Unsave item");
+		$("#save").html("Un(s)ave item");
 		$("#save").addClass("button-primary");
 
 	} else{
 		//not saved yet
 		g = '<div class="center">';
 		g += '<a class="star" id="' + id + '"><i class="fa fa-star-o fa-2x" title="Save"></i></a></div>';
-		$("#save").html("<strong>(s)</strong> Save item");
+		$("#save").html("<strong>(s)ave item");
 		$("#save").removeClass("button-primary");
 	}
 	return g;
@@ -574,13 +574,13 @@ function update_star(id,obj){
 		//thing exists, set star to on
 		star_html += '<a><i class="fa fa-star fa-2x" title="Unsave"></i></a>';	 
 		var s = $("#save");
-		s.html("<strong>(s)</strong> Unsave item");
+		s.html("Un(s)ave item");
 		s.addClass("button-primary");
 	} else{
 		//not saved yet
 		obj.removeClass("sel");
 		star_html += '<a><i class="fa fa-star-o fa-2x" title="Save"></i></a>';
-				$("#save").html("<strong>(s)</strong> Save item");
+				$("#save").html("(s)ave item");
 				$("#save").removeClass("button-primary");
 	}
 	
@@ -963,7 +963,7 @@ $(document).ready(function(){
 	
 	
 	$(".sfilter").click(function(){
-		console.log("Clicking");
+		//console.log("Clicking");
 		q = JSON.parse(sessionStorage.savedokay);
 		if (q == 1){
 			q = 0;
