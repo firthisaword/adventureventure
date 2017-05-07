@@ -69,8 +69,16 @@ function shuffle(a) {
         a[j] = x;
     }
 }
+
+function check_filters(){
+	if (!sum(filters())) 
+		sessionStorage.removeItem('filterdata');
+	
+}
 function update_buttons(){
+	
 	f = filters();
+	
 	for (x in f){
 		if (f[x] == 1){
 			$('#'+x).addClass("button-primary");
@@ -498,12 +506,15 @@ function add_star_code(id,size=2){
 		//thing exists, set star to on
 		g = '<div class="center">';
 		g += '<a class="star sel" id="' + id + '"><i class="fa fa-star fa-2x" title="Unsave"></i></a></div>'	 
-
+		$("#save").html("<strong>(s)</strong> Unsave item");
+		$("#save").addClass("button-primary");
 
 	} else{
 		//not saved yet
 		g = '<div class="center">';
 		g += '<a class="star" id="' + id + '"><i class="fa fa-star-o fa-2x" title="Save"></i></a></div>';
+		$("#save").html("<strong>(s)</strong> Save item");
+		$("#save").removeClass("button-primary");
 	}
 	return g;
 	/*var c = inColl(type,id);
@@ -534,12 +545,15 @@ function update_star(id,obj){
 	if (colls.length > 0){
 		//thing exists, set star to on
 		star_html += '<a><i class="fa fa-star fa-2x" title="Unsave"></i></a>';	 
-
-
+		var s = $("#save");
+		s.html("<strong>(s)</strong> Unsave item");
+		s.addClass("button-primary");
 	} else{
 		//not saved yet
 		obj.removeClass("sel");
 		star_html += '<a><i class="fa fa-star-o fa-2x" title="Save"></i></a>';
+				$("#save").html("<strong>(s)</strong> Save item");
+				$("#save").removeClass("button-primary");
 	}
 	
 	obj.html(star_html);
@@ -572,13 +586,15 @@ function return_solo(id){
 		case "person":
 			q = soloperson(item);
 			break;
-		update_star(id);
+		//update_star(id);
 		
 		
 	
 
 }
+
 }
+
 return q;
 }
 
@@ -881,7 +897,9 @@ function unsave(id, notes="", coll="archive"){
 
 
 $(document).ready(function(){
-	if (!sum(filters())) localStorage.removeItem('filterdata');
+	check_filters();
+//	if (!sum(filters())) 
+//		sessionStorage.removeItem('filterdata');
 
 	if (!localStorage.saved) {
 		saved = starchive;

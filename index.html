@@ -38,16 +38,21 @@
 		$("#header").html(header());
 		$("#index").addClass("button-primary");
 	 
-	 update_buttons();
+
 
 
 		$("#random").click(function() {
-		 id = randomize();
-		 localStorage.lastid = id;
-		 $('#details').html(return_solo(id));
+			//console.log("randomizing");
+				filters();
+			 id = randomize();
+			 localStorage.lastid = id;
+			 $('#details').html(return_solo(id));
+			 update_buttons();
+			 check_filters();
+			 
 		});
 		$("#save").click(function() {
-		$('.star').trigger("click");
+			$('.star').trigger("click");
 		});
 	 ////console.log(qs);
 	 
@@ -56,14 +61,13 @@
 	 //var random = qs["r"];
 	 var id = randomize();
 	 localStorage.lastid = id;
-		 $("#randombox").show();
+	 	 	update_buttons();
+		// $("#randombox").show();
 //		 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; Random Object</h5>');
 		 $(document).keydown(function(e) {
 		     switch(e.which) {
 		         case 88: // x
-					 id = randomize();
-					 localStorage.lastid = id;
-					 $('#details').html(return_solo(id));
+					 $('#random').trigger("click");
 		         break;
 
 		         case 83: // s
@@ -107,7 +111,9 @@
   <div class="row">
 	  <h1 class=''>Adventure Venture</h1>
 	  <p class="center">A random something from the archives:</p>
-	  <div class="crandom"><button class="constant" id="save"><strong>(s)</strong> Save item</button><button class="constant button-primary" id="random"><strong>(x)</strong> Spin again!</button></div>
+	  <div class="crandom"><button class="constant" id="save"><strong>(s)</strong> Save item</button>
+		  					<button class="constant"><strong>(s)</strong>See s</button>
+							<button class="constant" id="random"><strong>(x)</strong> Spin again!</button></div>
 	  
 	  </div>
 		  <div class="boxpad2">
@@ -119,7 +125,7 @@
 
 		  <div id="padder">Invisible</div>
 		  
-		  <div class="hidden" id="randombox">
+		  <div id="randombox">
 		  	  
 			  <div class="row" id="navbut">
 				
