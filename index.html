@@ -72,7 +72,7 @@
 //		 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; Random Object</h5>');
 		 $(document).keydown(function(e) {
 		     switch(e.which) {
-		         case 88: // x
+		         case 65: // a
 					 $('#random').trigger("click");
 		         break;
 
@@ -80,6 +80,11 @@
 					 //save
 					 $('.star').trigger("click");
 					 
+		         break;
+		         case 68: // d
+					 //save
+					 document.location.replace("savedcol.html?id=archive");
+				 
 		         break;
 
 		         default: return; // exit this handler for other keys
@@ -117,9 +122,10 @@
   <div class="row">
 	  <h1 class=''>Adventure Venture</h1>
 	  <p class="center">A random something from the archives:</p>
-	  <div class="crandom"><button class="constant" id="save"><strong>(s)</strong> Save item</button>
-		  					<button class="constant" id="ar">See archive</button>
-							<button class="constant button-primary" id="random"><strong>(x)</strong> Spin again!</button></div>
+	  <div class="crandom"><button class="constant button-primary" id="random"><strong>(a)</strong> Another!</button>
+		  <button class="constant" id="save"><strong>(s)</strong> Save item</button>
+		  					<button class="constant" id="ar">go to save(d)</button>
+							</div>
 	  
 	  </div>
 		  <div class="boxpad2">
