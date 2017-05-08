@@ -74,7 +74,7 @@ function check_filters(){
 	if (!sum(filters())) 
 		sessionStorage.removeItem('filterdata');
 	if (!JSON.parse(sessionStorage.savedokay))
-		sessionStorage.savedokay = 1;
+		sessionStorage.savedokay = 0;
 	
 }
 
@@ -115,7 +115,7 @@ function filters() {
 		sessionStorage.filterdata = JSON.stringify(filtero);
 	};
 	
-	if (!sessionStorage.savedokay) sessionStorage.savedokay = JSON.stringify(1);
+	if (!sessionStorage.savedokay) sessionStorage.savedokay = JSON.stringify(0);
 	return filtero;
 }
 
@@ -158,7 +158,7 @@ function item_url(obj){
 
 function randomize(savedokay){	
 	if (!savedokay){
-		savedokay = true;
+		savedokay = false;
 	}
   var rand = random_valid_id(savedokay);
   if (rand != "na") return rand;
@@ -415,7 +415,7 @@ function all_items(type,imgwidth,src){
 
 function list_collections(){
 	s = JSON.parse(localStorage.saved);
-	h = "<h3>User Collections</h3>";
+	h = "";
 	for (c in s) {
 		var currcol = s[c];
 		if (!currcol.mine)	h += '<h5>' 
@@ -437,9 +437,9 @@ function list_collections(){
 function show_collection(col,imgwidth){
 	//get the full collection and build html from there
 	if (!imgwidth) imgwidth = 100;
-	var col_html = "<h1>"
+	var col_html = "<h3>"
 	+ col.name
-	+ '</h1>';
+	+ '</h3>';
 	if (col.mine=="0") {
 		col_html += '<h5>Author\'s Collection Notes</h5><p>' + col.notes + '</p>';
 	} else {

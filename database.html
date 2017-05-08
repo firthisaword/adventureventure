@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>AV: Adventures</title>
+  <title>Collections</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -24,93 +24,31 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" id="ico" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="images/favicon-archive.ico">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/collections.js"></script>
 <script src="js/adventures.js"></script>
 <script src="js/plots.js"></script>
 <script src="js/places.js"></script>
 <script src="js/people.js"></script>
+<script src="js/collections.js"></script>
 <script src="js/util.js"></script>
 <script>
 // Change this for whichever adventure is around
-	var items;
-	 var col = qs["type"];
 
-	 
-	function display_adventures(){
-			$('#adventures').html(items);
+
+function display_adventures(){
+			$('#adventures').html(all_adventures());
 	}
 	 $(document).ready(function(){
 	 //shuffle(plots);
 		 //adventures.sort(srt(null,'source'));
-		
-		 switch (col) {
-		 case "all":
-		 
-			 items = all_items();
-			 $("#title").html("Everything");
-			 document.title = 'Everything';
-			 $("#ico").attr('href',"images/favicon-bathtub.ico");
-			 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; <a href="collections.html">Collections</a> &mdash; Everything</h5>');
-			 
-			 break;
-		 case "adv":
-			 items = all_items("adventure",100);
-			 $("#title").html("Browse Adventures");
-			 document.title = 'Adventures';
-			 $("#ico").attr('href',"images/favicon-book.ico");
-			 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; <a href="collections.html">Collections</a> &mdash; Adventures</h5>');
-			 break;
-		 case "plots":
-			 items = all_items("plot",100);
-			 $("#title").html("Plot Hooks");
-			 document.title = 'Browse Plot Hooks';
-			 $("#ico").attr('href',"images/favicon-bookmark.ico");
-			 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; <a href="collections.html">Collections</a> &mdash; Plot Hooks</h5>');
-			 break;
-		 case "people":
-			 items = all_items("person",100);
-			 $("#title").html("Browse NPCs, Villains, and Patrons");
-			 document.title = 'People';
-			 $("#ico").attr('href',"images/favicon-user.ico");
-			 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; <a href="collections.html">Collections</a> &mdash; People</h5>');
-			 break;
-		 case "places":
-			 items = all_items("place",200);
-			 $("#title").html("Browse Places &amp; Encounters");
-			 document.title = 'Places';
-			 $("#ico").attr('href',"images/favicon-map.ico");
-			 $("#header").html('<h5 style="padding-top:0;"><a href="index.html">Home</a> &mdash; <a href="collections.html">Collections</a> &mdash; Places</h5>');
-			 
-			 break;
-		 }
-		 display_adventures();
+ 		$("#header").html(header());
+ 		$("#db").addClass("button-primary");
+		// $('#collections').html(list_collections());
 	
+	 });
 
-   		$("#header").html(header());
-   		$("#db").addClass("button-primary");
-
-
-		$("#random").click(function() {
-		  //console.log("Randomizing...");
-		  //$("button").each(function(){$(this).removeClass("button-primary")});
-		  //$(this).addClass("button-primary");
-		  shuffle(advarr);
-		  display_adventures();
-		});
-	
-/*		$( "#sorted" ).click(function() {
-		  //console.log("Sorting...");
-		  $("button").each(function(){$(this).removeClass("button-primary")});
-		  $(this).addClass("button-primary");
-		  people.sort(srt(null,'source'));
-		  display_people();
-		  
-		});
-*/
-	});
 
 
 
@@ -124,12 +62,26 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
-	
-			  <div id="header" class="row center" style="padding-top:10px"></div>
+	  
+			  
+			  	 <div id="header" class="row center" style="padding-top:10px"></div>
+				
 	
 
-				<h1 id="title" class="center"></h1>
-				<div class="row" id="adventures">
+				<h1 class="center">The Database</h1>
+				<h5 class="center">Browse &amp; filter existing Adventure Venture content:</h5>
+
+			<div class="center">	
+<!--<a class="constantt button" style="padding-left: 20px;" href="megacol.html?type=all"><i class="fa fa-lg fa-bath"></i> Everything</a>-->
+<a class="constantt button" style="padding-left: 80px;" href="megacol.html?type=adv"><i class="fa fa-2x fa-book"></i> Browse adventures</a>
+<a class="constantt button" style="padding-left: 140px;" href="megacol.html?type=plots"><i class="fa fa-2x fa-bookmark"></i> Browse plot hooks</a>
+<a class="constantt button" style="padding-left: 140px;" href="megacol.html?type=people"><i class="fa fa-2x fa-user"></i> Browse people</a>
+<a class="constantt button" style="padding-left: 140px;" href="megacol.html?type=places"><i class="fa fa-2x fa-map"></i> Browse places</a>
+
+				</div>
+				
+				
+				<div class="row" id="collections">
 				</div>
 <!--
 	  <div class="row">

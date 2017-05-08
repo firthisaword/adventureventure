@@ -46,6 +46,8 @@
 			//console.log("randomizing");
 				filters();
 				so = JSON.parse(sessionStorage.savedokay);
+				//console.log("randomizing");
+				//console.log(so);
 			 id = randomize(so);
 			 localStorage.lastid = id;
 			 $('#details').html(return_solo(id));
@@ -121,7 +123,9 @@
 			  
   <div class="row">
 	  <h1 class=''>Adventure Venture</h1>
-	  <p class="center">A random something from the archives:</p>
+	  <h5>A database of existing adventures, plot hooks, characters, and places.</h5>
+	  <hr/>
+	  <p class="center">A random something from the database:</p>
 	  <div class="crandom"><button class="constant button-primary" id="random">(a)nother!</button>
 		  <button class="constant" id="save">(s)ave item</button>
 		  					<button class="constant" id="ar">go to save(d)</button>
@@ -143,7 +147,7 @@
 				
 		  			</div>
 
-		  			<div class="center" id="footer">
+		  			<div class="hidden center" id="foooter">
 						<p class="center">Show me random
 		  				<button class="constant filter button-primary" id="a"><i class="fa fa-lg fa-book"></i> Adventures</button>
 		  				<button class="constant filter button-primary" id="p"><i class="fa fa-lg fa-bookmark"></i> Plot hooks</button>

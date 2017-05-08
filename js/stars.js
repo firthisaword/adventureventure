@@ -1,7 +1,8 @@
 function header(){
 	var htm = '<a class="button constant" id="index" href="index.html" style="text-align:center;">Home</a>'
-			  + '<a class="button constant" id="archive" href="savedcol.html?id=archive" style="text-align:center;">Your Archive</a>'
-			  + '<a class="button constant" id="coll" href="collections.html" style="text-align:center;">Collections</a>'
+			+ '<a class="button constant" id="db" href="database.html" style="text-align:center;">The Database</a>'
+			  + '<a class="button constant" id="archive" href="savedcol.html?id=archive" style="text-align:center;">Your Stuff</a>'
+			  + '<a class="button constant" id="coll" href="collections.html" style="text-align:center;">User Collections</a>'
 			  + '<a class="button constant" id="about" href="about.html" style="text-align:center;">About</a>'
 			  + '<button id="nuke" class="constant">Reset</button>'
 	+ '<p class="right">You are logged in as <a href="savedcol.html?id=archive">TheBestDM</a></p>';
