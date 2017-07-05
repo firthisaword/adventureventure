@@ -42,8 +42,8 @@ var freya =
 		pages: "?",
 		source: "Necromancer Games",
 		sourceurl: "http://www.drivethrurpg.com/product/1443/The-Crucible-of-Freya?it=1",
-		synopsis: "Player characters begin by arriving at the eponymous keep, and can base themselves there before investigating the series of caverns in the nearby hills teeming with monsters. These Caves of Chaos house multiple species of vicious humanoids. Plot twists include a treacherous priest within the keep, hungry lizardmen in a nearby swamp, and a mad hermit in the wilderness. It typifies the dungeon crawls associated with beginning D&D players, while permitting some limited outdoor adventures.",
-		image: "border.jpg",
+		synopsis: "The first in a new series of D20 adventures by Necromancer Games, The Crucible of Freya is a challenging introductory adventure for any fantasy campaign. Detailing the village of Fairhill, the surrounding wilderness and a nearby ruined keep, as well as the dungeon levels beneath, this adventure module provides all the material a DM needs to start his new 3rd-Edition campaign. Will your characters learn what dark forces are behind the orc raids?",
+		image: "freya.jpg",
 		type: "adventure",
 		src: "a.2",
 		
